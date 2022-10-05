@@ -8,12 +8,13 @@ import { RegistrationForm, Main, UserProfile, Cats, Tests } from "./pages";
 import { FakeList } from "./pages/FakeList";
 import { theme } from "./theme";
 
-// if (process.env.NODE_ENV === "development") {
-//   const { worker } = require("./mocks/browser");
-//   worker.start({
-//     onUnhandledRequest: "bypass",
-//   });
-// }
+if (process.env.NODE_ENV === "development") {
+  import("./mocks/browser").then(({ worker }) => {
+    worker.start({
+      onUnhandledRequest: "bypass",
+    });
+  });
+}
 
 const queryClient = new QueryClient({
   defaultOptions: {

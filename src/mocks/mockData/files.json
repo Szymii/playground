@@ -1,0 +1,62 @@
+[
+  {
+    "id": "l3orpzhugbvef291sd54yin08mk7x6jt",
+    "fileName": "Test_file_one.pdf",
+    "fileExtension": "pdf",
+    "createdAt": "2022-09-30 14:15",
+    "editedAt": "2022-09-30 15:15",
+    "editionReason": "Stefan",
+    "inactivatedAt": null,
+    "inactivationReason": null,
+    "deletedAt": null,
+    "deletionReason": null
+  },
+  {
+    "id": "bfhmauzn7xtkpeoqw5164c20i83vdsyr",
+    "fileName": "Already_removed.jpg",
+    "fileExtension": "jpg",
+    "createdAt": "2022-03-31 10:21",
+    "editedAt": null,
+    "editionReason": null,
+    "inactivatedAt": null,
+    "inactivationReason": null,
+    "deletedAt": null,
+    "deletionReason": null
+  },
+  {
+    "id": "tz0ol5d1ymw2b8s7pgreu3fvnaxqihkc",
+    "fileName": "File_with_wayyyyy_toooooo_longggg_name_v3332.docx",
+    "fileExtension": "docx",
+    "createdAt": "2021-01-30 11:26",
+    "editedAt": null,
+    "editionReason": null,
+    "inactivatedAt": "2021-01-31 00:01",
+    "inactivationReason": "To old",
+    "deletedAt": null,
+    "deletionReason": null
+  },
+  {
+    "id": "akq17hctgwld9fyuj8evp3m620io5xnz",
+    "fileName": "Short.pdf",
+    "fileExtension": "pdf",
+    "createdAt": "2022-12-30 02:23",
+    "editedAt": "2022-12-30 23:23",
+    "editionReason": "Boring",
+    "inactivatedAt": null,
+    "inactivationReason": null,
+    "deletedAt": "2022-12-31 23:23",
+    "deletionReason": "Mistake"
+  },
+  {
+    "id": "d401xpvgo2bc6khslwn8ymje735zarfq",
+    "fileName": "Untrusted_repo.zip",
+    "fileExtension": "zip",
+    "createdAt": "2022-07-30 07:25",
+    "editedAt": null,
+    "editionReason": null,
+    "inactivatedAt": null,
+    "inactivationReason": null,
+    "deletedAt": "2022-11-01 09:23",
+    "deletionReason": "I do not like this one"
+  }
+]
