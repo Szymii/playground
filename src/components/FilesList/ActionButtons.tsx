@@ -12,6 +12,7 @@ import {
   mdiInformationOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import { useUselessContext } from "../../providers";
 import { Attachment } from "../../types";
 import { IconButton } from "../IconButton";
 
@@ -21,6 +22,7 @@ interface IProps {
 
 export const ActionButtons = ({ file }: IProps) => {
   const arrayOfButtons: Array<JSX.Element> = [];
+  const { test } = useUselessContext();
 
   if (!file.inactivatedAt && !file.deletedAt) {
     arrayOfButtons.push(
@@ -30,6 +32,7 @@ export const ActionButtons = ({ file }: IProps) => {
         iconPath={mdiDownload}
         width="100%"
         onClick={() => {
+          test();
           alert("Downloading");
         }}
       />
