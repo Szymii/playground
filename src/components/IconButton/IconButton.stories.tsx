@@ -6,7 +6,7 @@ import { theme } from "../../theme";
 import { IconButton } from "./IconButton";
 
 export default {
-  title: "Button",
+  title: "Components/IconButton",
   component: IconButton,
   decorators: [
     (Story) => (
