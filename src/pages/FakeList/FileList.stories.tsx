@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { theme } from "../theme";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
 import { FakeList } from "./FakeList";
+import { theme } from "../../theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {

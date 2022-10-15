@@ -67,7 +67,7 @@ export const RegistrationForm = () => {
               })}
             />
             {errors.password && (
-              <FormErrorMessage>Invalid password</FormErrorMessage>
+              <FormErrorMessage>Invalid password.</FormErrorMessage>
             )}
           </FormControl>
           <FormControl as="fieldset">
@@ -77,7 +77,7 @@ export const RegistrationForm = () => {
                   Woman
                 </Radio>
                 <Radio value="male" {...register("gender")}>
-                  Men
+                  Man
                 </Radio>
               </HStack>
             </RadioGroup>
