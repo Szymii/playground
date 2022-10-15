@@ -1,10 +1,9 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { rest } from "msw";
-import { worker } from "../mocks/browser";
 import { theme } from "../theme";
-import filesData from "../mocks/mockData/files.json";
+import { userEvent, waitFor, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 import { FakeList } from "./FakeList";
 
@@ -30,4 +29,19 @@ export default {
   ],
 } as ComponentMeta<typeof FakeList>;
 
-export const Default = <FakeList />;
+const Template: ComponentStory<typeof FakeList> = () => <FakeList />;
+export const Default = Template.bind({});
+
+export const Interactive = Template.bind({});
+Interactive.play = async ({ canvasElement }) => {
+  const { getByText, getAllByLabelText } = within(canvasElement);
+
+  await waitFor(() =>
+    expect(getByText("Test_file_one.pdf")).toBeInTheDocument()
+  );
+
+  const menuButton = await getAllByLabelText("Options")[0];
+  userEvent.click(menuButton);
+
+  expect(getByText("Download file")).toBeInTheDocument();
+};
