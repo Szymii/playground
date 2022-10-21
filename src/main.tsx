@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PrivateRouts } from "./helpers";
-import { RegistrationForm, Main, UserProfile, Cats, Tests } from "./pages";
+import { Main, UserProfile, Cats, Tests, RegistrationForm } from "./pages";
 import { FakeList } from "./pages/FakeList";
 import { theme } from "./theme";
 

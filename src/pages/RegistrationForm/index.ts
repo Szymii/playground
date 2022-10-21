@@ -1,1 +1,1 @@
-export { RegistrationForm, useUserDataStore } from "./RegistrationForm";
+export { RegistrationForm } from "./RegistrationForm";

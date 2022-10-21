@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-import { useSuspense } from "../../hooks";
+import { useCats } from "../../modules/cats";
 import { useCustomModalStore } from "../CustomModal/CustomModal";
 
 interface IProps {
@@ -7,12 +7,9 @@ interface IProps {
   category: string;
 }
 
-type Cat = Array<{ id: string }>;
-
 export const CatsList = ({ heading, category }: IProps) => {
-  const url = `https://cataas.com//api/cats?tags=${category}&skip=0&limit=3`;
-  const { data: cats } = useSuspense<Cat>(`cat-${category}`, url);
   const { onOpen, setModalData } = useCustomModalStore();
+  const cats = useCats(category);
 
   return (
     <>

@@ -15,14 +15,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import create from "zustand";
-import { IRegistrationForm, IUserState } from "../../types";
-
-export const useUserDataStore = create<IUserState>((set) => ({
-  userData: {} as IRegistrationForm,
-  setUserData: (userData: IRegistrationForm) =>
-    set((state) => ({ ...state, userData })),
-}));
+import { useUserDataStore } from "../../modules/users";
+import { IRegistrationForm } from "../../types";
 
 export const RegistrationForm = () => {
   const {

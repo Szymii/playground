@@ -1,6 +1,6 @@
 import { Flex, Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { useUserDataStore } from "../../pages";
+import { useUserDataStore } from "../../modules/users";
 import { ToggleLightButton } from "../ToggleLightButton";
 
 export const Nav = () => {
@@ -24,7 +24,7 @@ export const Nav = () => {
       <Link as={RouterLink} to={"/tests"} fontSize="1.4rem" fontWeight="bold">
         Tests
       </Link>
-      {isNotEmptyObject(userData) ? (
+      {isNotEmptyObject(userData) && (
         <Link
           as={RouterLink}
           to={"/profile"}
@@ -33,7 +33,7 @@ export const Nav = () => {
         >
           Profile
         </Link>
-      ) : null}
+      )}
       <ToggleLightButton />
     </Flex>
   );

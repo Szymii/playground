@@ -1,0 +1,1 @@
+export { useCats } from "./useCats";
