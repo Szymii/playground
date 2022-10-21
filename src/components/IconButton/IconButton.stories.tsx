@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { mdiDownload } from "@mdi/js";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { theme } from "../../theme";
+import { theme } from "theme";
 
 import { IconButton } from "./IconButton";
 

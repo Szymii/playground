@@ -1,5 +1,5 @@
 import { Container, Heading, VStack } from "@chakra-ui/react";
-import { CatsList, ErrorBoundary } from "../components";
+import { CatsList, ErrorBoundary } from "components";
 
 export const Cats = () => {
   return (

@@ -3,9 +3,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
-
-import { theme } from "../../theme";
 import { RegistrationForm } from "./RegistrationForm";
+import { theme } from "theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {

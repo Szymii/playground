@@ -1,4 +1,5 @@
-import { useSuspense } from "../../hooks";
+import { useSuspense } from "hooks";
+
 type RowCat = Array<{ _id: string }>;
 
 export const useCats = (category: string) => {

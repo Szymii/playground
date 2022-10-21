@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-import { useCats } from "../../modules/cats";
+import { useCats } from "modules/cats";
 import { CatModal, useCatModal } from "./CatModal";
 
 interface IProps {
