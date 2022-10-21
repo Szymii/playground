@@ -1,9 +1,13 @@
 import { useSuspense } from "../../hooks";
-type Cat = Array<{ id: string }>;
+type RowCat = Array<{ _id: string }>;
 
 export const useCats = (category: string) => {
   const url = `https://cataas.com//api/cats?tags=${category}&skip=0&limit=3`;
-  const { data: cats } = useSuspense<Cat>(`cat-${category}`, url);
+  const { data: rowCats } = useSuspense<RowCat>(`cat-${category}`, url);
+
+  const cats = rowCats?.map((cat) => {
+    return { ...cat, id: cat._id };
+  });
 
   return cats;
 };

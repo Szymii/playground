@@ -1,5 +1,5 @@
 import { Container, Heading, VStack } from "@chakra-ui/react";
-import { CatsList, ErrorBoundary, CustomModal } from "../components";
+import { CatsList, ErrorBoundary } from "../components";
 
 export const Cats = () => {
   return (
@@ -13,7 +13,6 @@ export const Cats = () => {
           <CatsList heading="Box" category="box" />
           <CatsList heading="Sad" category="sad" />
         </ErrorBoundary>
-        <CustomModal />
       </VStack>
     </Container>
   );

@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import { useCats } from "../../modules/cats";
-import { useCustomModalStore } from "../CustomModal/CustomModal";
+import { CatModal, useCatModal } from "./CatModal";
 
 interface IProps {
   heading: string;
@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const CatsList = ({ heading, category }: IProps) => {
-  const { onOpen, setModalData } = useCustomModalStore();
+  const { onOpen, setModalData } = useCatModal();
   const cats = useCats(category);
 
   return (
@@ -33,6 +33,7 @@ export const CatsList = ({ heading, category }: IProps) => {
           </Box>
         ))}
       </Flex>
+      <CatModal />
     </>
   );
 };
