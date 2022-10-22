@@ -1,18 +1,15 @@
 import { Box, HStack, Spacer, Text, VStack } from "@chakra-ui/react";
 import Icon from "@mdi/react";
 import { getIconByExtension } from "src/helpers";
-import { useSuspense } from "src/hooks";
-import { Attachment } from "src/types";
+import { useFilesQuery } from "src/modules/files";
 import { ActionButtons } from "./ActionButtons";
 
-type Files = Array<Attachment>;
-
 export const FilesList = () => {
-  const { data } = useSuspense<Files>("files", "/api/files");
+  const files = useFilesQuery();
 
   return (
     <VStack spacing="15" w="100%">
-      {data?.map((file) => (
+      {files?.map((file) => (
         <HStack w="100%" spacing="15px" key={file.id}>
           <Box>
             <Icon path={getIconByExtension(file.fileExtension)} size={1.5} />

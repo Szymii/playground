@@ -9,6 +9,12 @@ enum WorkplaceEnum {
   fullstack = "fullstack",
 }
 
+export enum ValidationStatuses {
+  PENDING = "pending",
+  VERIFIED = "verified",
+  ERROR = "error",
+}
+
 export interface IRegistrationForm {
   emailAddress: string;
   firstName: string;

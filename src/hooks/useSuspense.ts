@@ -7,9 +7,9 @@ async function fetchData(url: string) {
 }
 
 export const useSuspense = <T>(key: string, url: string) => {
-  const { data, status } = useQuery<T>([key], () => fetchData(url), {
+  const { data, status, refetch } = useQuery<T>([key], () => fetchData(url), {
     suspense: true,
   });
 
-  return { data, status };
+  return { data, status, refetch };
 };

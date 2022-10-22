@@ -17,6 +17,7 @@ import {
 import { useUserDataStore } from "src/modules/users";
 import { useForm } from "react-hook-form";
 import { IRegistrationForm } from "src/types";
+import { useValidate } from "src/modules/validation";
 
 export const RegistrationForm = () => {
   const {
@@ -25,8 +26,10 @@ export const RegistrationForm = () => {
     formState: { errors },
   } = useForm<IRegistrationForm>();
   const setUserData = useUserDataStore((state) => state.setUserData);
+  const [validate] = useValidate();
 
   const onSubmit = (data: IRegistrationForm) => {
+    validate();
     setUserData(data);
   };
 
