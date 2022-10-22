@@ -8,7 +8,7 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
-import { createModalStore } from "helpers";
+import { createModalStore } from "src/helpers";
 
 export const useCatModal = createModalStore<{ id: string }>();
 

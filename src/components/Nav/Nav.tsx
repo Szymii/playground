@@ -1,6 +1,6 @@
 import { Flex, Link } from "@chakra-ui/react";
-import { ToggleLightButton } from "components/ToggleLightButton";
-import { useUserDataStore } from "modules/users";
+import { ToggleLightButton } from "src/components/ToggleLightButton";
+import { useUserDataStore } from "src/modules/users";
 import { Link as RouterLink } from "react-router-dom";
 
 export const Nav = () => {

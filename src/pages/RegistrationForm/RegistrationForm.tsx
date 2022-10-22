@@ -14,9 +14,9 @@ import {
   Select,
   VStack,
 } from "@chakra-ui/react";
-import { useUserDataStore } from "modules/users";
+import { useUserDataStore } from "src/modules/users";
 import { useForm } from "react-hook-form";
-import { IRegistrationForm } from "types";
+import { IRegistrationForm } from "src/types";
 
 export const RegistrationForm = () => {
   const {

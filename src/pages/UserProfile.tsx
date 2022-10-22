@@ -9,7 +9,7 @@ import {
   RadioGroup,
   VStack,
 } from "@chakra-ui/react";
-import { useUserDataStore } from "modules/users";
+import { useUserDataStore } from "src/modules/users";
 
 export const UserProfile = () => {
   const userData = useUserDataStore((state) => state.userData);

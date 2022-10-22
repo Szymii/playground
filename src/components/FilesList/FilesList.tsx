@@ -1,8 +1,8 @@
 import { Box, HStack, Spacer, Text, VStack } from "@chakra-ui/react";
 import Icon from "@mdi/react";
-import { getIconByExtension } from "helpers";
-import { useSuspense } from "hooks";
-import { Attachment } from "types";
+import { getIconByExtension } from "src/helpers";
+import { useSuspense } from "src/hooks";
+import { Attachment } from "src/types";
 import { ActionButtons } from "./ActionButtons";
 
 type Files = Array<Attachment>;

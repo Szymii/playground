@@ -1,4 +1,4 @@
-import { useSuspense } from "hooks";
+import { useSuspense } from "src/hooks";
 
 type RowCat = Array<{ _id: string }>;
 

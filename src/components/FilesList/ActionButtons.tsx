@@ -12,9 +12,9 @@ import {
   mdiInformationOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import { IconButton } from "components/IconButton";
-import { useUselessContext } from "providers";
-import { Attachment } from "types";
+import { useUselessContext } from "src/providers";
+import { Attachment } from "src/types";
+import { IconButton } from "../IconButton";
 
 interface IProps {
   file: Attachment;

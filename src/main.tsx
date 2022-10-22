@@ -4,8 +4,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PrivateRouts } from "./helpers";
-import { Main, UserProfile, Cats, Tests, RegistrationForm } from "./pages";
-import { FakeList } from "./pages/FakeList";
+import {
+  Main,
+  UserProfile,
+  Cats,
+  Tests,
+  RegistrationForm,
+  FakeList,
+} from "./pages";
 import { theme } from "./theme";
 
 if (process.env.NODE_ENV === "development") {

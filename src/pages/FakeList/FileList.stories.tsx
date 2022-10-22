@@ -5,7 +5,7 @@ import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
 import { FakeList } from "./FakeList";
-import { theme } from "theme";
+import { theme } from "src/theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {
