@@ -35,7 +35,7 @@ const RegistrationFormThrowable = () => {
   };
 
   return (
-    <Container w={[300, 400, 700]} pt="3em">
+    <>
       <Heading textAlign="center" mb="1em">
         Registration Form
       </Heading>
@@ -97,12 +97,14 @@ const RegistrationFormThrowable = () => {
           </Box>
         </VStack>
       </form>
-    </Container>
+    </>
   );
 };
 
 export const RegistrationForm = () => (
-  <ErrorBoundary message="it's dead">
-    <RegistrationFormThrowable />
-  </ErrorBoundary>
+  <Container w={[300, 400, 700]} pt="3em">
+    <ErrorBoundary message="it's dead">
+      <RegistrationFormThrowable />
+    </ErrorBoundary>
+  </Container>
 );

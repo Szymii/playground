@@ -11,14 +11,14 @@ export const ErrorBoundary = ({ children, message }: IProps) => {
   return (
     <Boundary
       fallback={
-        <Box height="140px">
+        <Box height="140px" textAlign="center">
           <Text>{message}</Text>
         </Box>
       }
     >
       <Suspense
         fallback={
-          <Box height="140px">
+          <Box height="140px" textAlign="center">
             <Spinner />
           </Box>
         }
