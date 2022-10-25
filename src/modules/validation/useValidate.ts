@@ -9,24 +9,20 @@ export const useValidate = () => {
   const validate = () => {
     const interval = setInterval(async () => {
       const { data } = await refetch();
-
       if (data?.status === ValidationStatuses.VERIFIED) {
         toast({
           title: `Your account has been verified`,
           status: "success",
           isClosable: true,
         });
-
         clearInterval(interval);
       }
-
       if (data?.status === ValidationStatuses.ERROR) {
         toast({
           title: `Verification error`,
           status: "error",
           isClosable: true,
         });
-
         clearInterval(interval);
       }
     }, 5000);

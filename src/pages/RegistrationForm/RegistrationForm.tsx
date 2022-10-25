@@ -18,8 +18,9 @@ import { useUserDataStore } from "src/modules/users";
 import { useForm } from "react-hook-form";
 import { IRegistrationForm } from "src/types";
 import { useValidate } from "src/modules/validation";
+import { ErrorBoundary } from "src/components";
 
-export const RegistrationForm = () => {
+const RegistrationFormThrowable = () => {
   const {
     register,
     handleSubmit,
@@ -99,3 +100,9 @@ export const RegistrationForm = () => {
     </Container>
   );
 };
+
+export const RegistrationForm = () => (
+  <ErrorBoundary message="it's dead">
+    <RegistrationFormThrowable />
+  </ErrorBoundary>
+);
