@@ -14,7 +14,7 @@ import {
 import Icon from "@mdi/react";
 import { useUselessContext } from "src/providers";
 import { Attachment } from "src/types";
-import { IconButton } from "../IconButton";
+import { IconButton } from "../_atoms";
 
 interface IProps {
   file: Attachment;
@@ -65,7 +65,9 @@ export const ActionButtons = ({ file }: IProps) => {
         }}
       />
     );
-  } else if (file.inactivatedAt) {
+  }
+
+  if (!file.deletedAt && file.inactivatedAt) {
     arrayOfButtons.push(
       <IconButton
         ariaLabel="Show inactivation reason"

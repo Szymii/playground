@@ -1,5 +1,5 @@
 import { Flex, Link } from "@chakra-ui/react";
-import { ToggleLightButton } from "src/components/ToggleLightButton";
+import { ToggleLightButton } from "src/components/_atoms";
 import { useUserDataStore } from "src/modules/users";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -20,9 +20,6 @@ export const Nav = () => {
       </Link>
       <Link as={RouterLink} to={"/form"} fontSize="1.4rem" fontWeight="bold">
         Form
-      </Link>
-      <Link as={RouterLink} to={"/tests"} fontSize="1.4rem" fontWeight="bold">
-        Tests
       </Link>
       {isNotEmptyObject(userData) && (
         <Link

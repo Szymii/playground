@@ -5,14 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PrivateRouts } from "./helpers";
-import {
-  Main,
-  UserProfile,
-  Cats,
-  Tests,
-  RegistrationForm,
-  FakeList,
-} from "./pages";
+import { Main, UserProfile, Cats, RegistrationForm, FakeList } from "./pages";
 import { theme } from "./theme";
 
 if (process.env.NODE_ENV === "development") {
@@ -44,7 +37,6 @@ root.render(
               <Route path="form" element={<RegistrationForm />} />
               <Route path="cats" element={<Cats />} />
               <Route path="files" element={<FakeList />} />
-              <Route path="tests" element={<Tests />} />
               <Route element={<PrivateRouts />}>
                 <Route path="profile" element={<UserProfile />} />
               </Route>
