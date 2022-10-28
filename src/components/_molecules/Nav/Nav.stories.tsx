@@ -1,6 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { theme } from "src/theme";
 import { Nav } from ".";
 
@@ -19,7 +20,11 @@ export default {
     (Story) => (
       <QueryClientProvider client={queryClient}>
         <ChakraProvider theme={theme}>
-          <Story />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/*" element={<Story />} />
+            </Routes>
+          </BrowserRouter>
         </ChakraProvider>
       </QueryClientProvider>
     ),
