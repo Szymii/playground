@@ -4,7 +4,7 @@ import { useUserDataStore } from "src/modules/users";
 import { Link as RouterLink } from "react-router-dom";
 
 export const Nav = () => {
-  const userData = useUserDataStore((state) => state.userData);
+  // const userData = useUserDataStore((state) => state.userData);
 
   const isNotEmptyObject = (object: object) => {
     return Object.keys(object).length !== 0;
@@ -21,7 +21,7 @@ export const Nav = () => {
       <Link as={RouterLink} to={"/form"} fontSize="1.4rem" fontWeight="bold">
         Form
       </Link>
-      {isNotEmptyObject(userData) && (
+      {/* {isNotEmptyObject(userData) && (
         <Link
           as={RouterLink}
           to={"/profile"}
@@ -30,7 +30,7 @@ export const Nav = () => {
         >
           Profile
         </Link>
-      )}
+      )} */}
       <ToggleLightButton />
     </Flex>
   );
