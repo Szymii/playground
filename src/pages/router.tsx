@@ -1,5 +1,6 @@
 import { PrivateRouts } from "helpers";
 import { createBrowserRouter } from "react-router-dom";
+import { AsyncPic, picLoader } from "./AsyncPic";
 import { Cats } from "./Cats";
 import { Files } from "./Files";
 import { Main } from "./Main";
@@ -24,6 +25,11 @@ export const router = createBrowserRouter([
       {
         path: "files",
         element: <Files />,
+      },
+      {
+        path: "pic",
+        element: <AsyncPic />,
+        loader: picLoader,
       },
       {
         element: <PrivateRouts />,

@@ -21,6 +21,9 @@ export const Nav = () => {
       <Link as={RouterLink} to={"/form"} fontSize="1.4rem" fontWeight="bold">
         Form
       </Link>
+      <Link as={RouterLink} to={"/pic"} fontSize="1.4rem" fontWeight="bold">
+        Async Pic
+      </Link>
       {isNotEmptyObject(userData) && (
         <Link
           as={RouterLink}
