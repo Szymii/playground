@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { RegistrationForm } from "./RegistrationForm";
-import { theme } from "src/theme";
+import { theme } from "theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -3,7 +3,7 @@ import { ErrorBoundary } from "components";
 import { FilesList } from "modules/files";
 import { UselessContextProvider } from "providers";
 
-export const FakeList = () => {
+export const Files = () => {
   return (
     <UselessContextProvider>
       <Container p="2em">

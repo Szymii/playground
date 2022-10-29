@@ -1,10 +1,9 @@
 import { PrivateRouts } from "helpers";
 import { createBrowserRouter } from "react-router-dom";
 import { Cats } from "./Cats";
-import { FakeList } from "./FakeList";
+import { Files } from "./Files";
 import { Main } from "./Main";
 import { NotFoundPage } from "./NotFoundPage";
-import { Pokemons } from "./Pokemons";
 import { RegistrationForm } from "./RegistrationForm";
 import { UserProfile } from "./UserProfile";
 
@@ -24,12 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "files",
-        element: <FakeList />,
-      },
-      {
-        path: "async",
-        element: <Pokemons />,
-        // loader:
+        element: <Files />,
       },
       {
         element: <PrivateRouts />,
