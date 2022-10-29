@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { theme } from "src/theme";
+import { theme } from "theme";
 import { ToggleLightButton } from ".";
 
 export default {

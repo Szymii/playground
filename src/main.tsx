@@ -3,9 +3,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { PrivateRouts } from "./helpers";
-import { Main, UserProfile, Cats, RegistrationForm, FakeList } from "./pages";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./pages/router";
 import { theme } from "./theme";
 
 if (process.env.NODE_ENV === "development") {
@@ -31,18 +30,7 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Main />}>
-              <Route path="form" element={<RegistrationForm />} />
-              <Route path="cats" element={<Cats />} />
-              <Route path="files" element={<FakeList />} />
-              <Route element={<PrivateRouts />}>
-                <Route path="profile" element={<UserProfile />} />
-              </Route>
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        <RouterProvider router={router} />
       </ChakraProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

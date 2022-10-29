@@ -1,1 +1,1 @@
-export { useFilesQuery } from "./useFilesQuery";
+export { FilesList } from "./FilesList";

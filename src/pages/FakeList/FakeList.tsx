@@ -1,6 +1,7 @@
 import { Container, Heading, VStack } from "@chakra-ui/react";
-import { ErrorBoundary, FilesList } from "src/components";
-import { UselessContextProvider } from "src/providers";
+import { ErrorBoundary } from "components";
+import { FilesList } from "modules/files";
+import { UselessContextProvider } from "providers";
 
 export const FakeList = () => {
   return (

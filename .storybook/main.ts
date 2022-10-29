@@ -1,4 +1,4 @@
-const { mergeConfig } = require("vite");
+const tsconfigPaths = require("vite-tsconfig-paths");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -15,14 +15,9 @@ module.exports = {
     storyStoreV7: true,
   },
   async viteFinal(config) {
-    // Merge custom configuration into the default config
-    return mergeConfig(config, {
-      // Use the same "resolve" configuration as your app
-      resolve: {
-        alias: {
-          src: "/src",
-        },
-      },
-    });
+    return {
+      ...config,
+      plugins: [...config.plugins, tsconfigPaths.default()],
+    };
   },
 };

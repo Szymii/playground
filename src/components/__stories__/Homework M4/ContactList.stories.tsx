@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ComponentMeta } from "@storybook/react";
-import { theme } from "src/theme";
+import { theme } from "theme";
 import { Contacts } from "./Contacts";
 
 export default {

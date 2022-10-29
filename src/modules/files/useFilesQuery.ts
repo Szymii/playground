@@ -1,5 +1,5 @@
-import { useSuspense } from "src/hooks";
-import { Attachment } from "src/types";
+import { useSuspense } from "hooks";
+import { Attachment } from "types";
 
 type Files = Array<Attachment>;
 

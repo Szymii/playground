@@ -1,8 +1,8 @@
 import { Box, HStack, Spacer, Text, VStack } from "@chakra-ui/react";
 import Icon from "@mdi/react";
-import { getIconByExtension } from "src/helpers";
-import { useFilesQuery } from "src/modules/files";
+import { getIconByExtension } from "helpers";
 import { ActionButtons } from "./ActionButtons";
+import { useFilesQuery } from "./useFilesQuery";
 
 export const FilesList = () => {
   const files = useFilesQuery();

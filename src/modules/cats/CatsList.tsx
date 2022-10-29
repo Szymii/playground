@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-import { useCatsQuery } from "src/modules/cats";
 import { CatModal, useCatModal } from "./CatModal";
+import { useCatsQuery } from "./useCatsQuery";
 
 interface IProps {
   heading: string;
