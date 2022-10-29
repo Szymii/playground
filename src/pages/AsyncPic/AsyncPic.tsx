@@ -6,9 +6,15 @@ interface Picture {
 }
 
 export const picLoader = async () => {
-  return fetch(
+  const res = await fetch(
     `https://picsum.photos/id/${Math.floor(Math.random() * 100)}/info`
   );
+
+  if (res.status === 404) {
+    throw new Response("Not Found", { status: 404 });
+  }
+
+  return res.json();
 };
 
 export const AsyncPic = () => {
