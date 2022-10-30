@@ -11,7 +11,7 @@ export const theme = extendTheme({
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
-        fontFamily: "body",
+        fontFamily: "Roboto, sans-serif",
         color: mode("gray.800", "whiteAlpha.900")(props),
         bg: mode("white", "gray.800")(props),
       },
