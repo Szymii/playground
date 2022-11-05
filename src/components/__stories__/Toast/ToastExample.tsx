@@ -6,6 +6,7 @@ import {
   useToast,
   UseToastOptions,
 } from "@chakra-ui/react";
+import { useCToast } from "./useCToast";
 
 const defaultOptions: UseToastOptions = {
   title: "Toast Example",
@@ -20,7 +21,11 @@ const defaultOptions: UseToastOptions = {
 };
 
 export const ToastExample = () => {
-  const toast = useToast();
+  const toast = useCToast({
+    ...defaultOptions,
+    status: "warning",
+    variant: "subtle",
+  });
 
   const handleSuccess = () =>
     toast({
@@ -28,11 +33,7 @@ export const ToastExample = () => {
       status: "success",
     });
 
-  const handleWarning = () =>
-    toast({
-      ...defaultOptions,
-      status: "warning",
-    });
+  const handleWarning = () => toast();
 
   const handleError = () =>
     toast({
