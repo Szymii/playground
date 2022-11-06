@@ -3,6 +3,7 @@ import { ComponentMeta } from "@storybook/react";
 import { theme } from "theme";
 import { ToastExample } from "./ToastExample";
 import { css, Global } from "@emotion/react";
+import { createMemoryRouter, Link, RouterProvider } from "react-router-dom";
 
 export default {
   title: "Concept/Toast",
@@ -24,10 +25,21 @@ export default {
   ],
 } as ComponentMeta<typeof ToastExample>;
 
+const router = createMemoryRouter([
+  {
+    path: "/",
+    element: <ToastExample />,
+  },
+  {
+    path: "/profile",
+    element: (
+      <>
+        <Link to="/">Go back</Link>
+      </>
+    ),
+  },
+]);
+
 export const Default = () => {
-  return (
-    <>
-      <ToastExample />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };

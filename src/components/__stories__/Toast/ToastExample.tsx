@@ -2,10 +2,11 @@ import {
   Button,
   Container,
   Heading,
+  Link,
   SimpleGrid,
-  useToast,
   UseToastOptions,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { useCToast } from "./useCToast";
 
 const defaultOptions: UseToastOptions = {
@@ -21,10 +22,18 @@ const defaultOptions: UseToastOptions = {
 };
 
 export const ToastExample = () => {
+  const navigate = useNavigate();
   const toast = useCToast({
     ...defaultOptions,
     status: "warning",
     variant: "subtle",
+    description: (
+      <ToastContent
+        handleClick={() => {
+          navigate("profile");
+        }}
+      />
+    ),
   });
 
   const handleSuccess = () =>
@@ -58,5 +67,14 @@ export const ToastExample = () => {
         </Button>
       </SimpleGrid>
     </Container>
+  );
+};
+
+const ToastContent = ({ handleClick }: { handleClick: () => void }) => {
+  return (
+    <>
+      {"Fill in your details in the"}{" "}
+      <Link onClick={handleClick}>{"profile tab"}</Link>
+    </>
   );
 };
