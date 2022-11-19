@@ -1,7 +1,7 @@
 import {
   Box,
-  Image,
   Modal as ChakraModal,
+  Image,
   ModalBody,
   ModalCloseButton,
   ModalContent,

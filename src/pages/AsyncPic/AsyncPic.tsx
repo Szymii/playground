@@ -7,7 +7,7 @@ interface Picture {
 
 export const picLoader = async () => {
   const res = await fetch(
-    `https://picsum.photos/id/${Math.floor(Math.random() * 100)}/info`
+    `https://picsum.photos/id/${Math.floor(Math.random() * 100)}/info`,
   );
 
   if (res.status === 404) {

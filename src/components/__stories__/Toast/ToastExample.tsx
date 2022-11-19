@@ -7,6 +7,7 @@ import {
   UseToastOptions,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+
 import { useCToast } from "./useCToast";
 
 const defaultOptions: UseToastOptions = {

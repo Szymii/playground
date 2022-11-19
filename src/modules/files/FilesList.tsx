@@ -1,6 +1,7 @@
 import { Box, HStack, Spacer, Text, VStack } from "@chakra-ui/react";
 import Icon from "@mdi/react";
 import { getIconByExtension } from "helpers";
+
 import { ActionButtons } from "./ActionButtons";
 import { useFilesQuery } from "./useFilesQuery";
 

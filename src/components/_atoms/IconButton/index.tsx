@@ -1,5 +1,5 @@
-import Icon from "@mdi/react";
 import { IconButton as Button } from "@chakra-ui/react";
+import Icon from "@mdi/react";
 
 interface IProps {
   iconPath: string;

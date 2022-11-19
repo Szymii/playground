@@ -1,11 +1,11 @@
-import { createContext, ReactNode, useContext } from "react";
+import { ReactNode, createContext, useContext } from "react";
 
 interface IProps {
   children: ReactNode;
 }
 
 const UselessContext = createContext<{ test: () => void } | undefined>(
-  undefined
+  undefined,
 );
 
 export const UselessContextProvider = ({ children }: IProps) => {

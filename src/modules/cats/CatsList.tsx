@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+
 import { CatModal, useCatModal } from "./CatModal";
 import { useCatsQuery } from "./useCatsQuery";
 

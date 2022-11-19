@@ -1,9 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
+import { Global, css } from "@emotion/react";
 import { ComponentMeta } from "@storybook/react";
+import { Link, RouterProvider, createMemoryRouter } from "react-router-dom";
 import { theme } from "theme";
+
 import { ToastExample } from "./ToastExample";
-import { css, Global } from "@emotion/react";
-import { createMemoryRouter, Link, RouterProvider } from "react-router-dom";
 
 export default {
   title: "Concept/Toast",

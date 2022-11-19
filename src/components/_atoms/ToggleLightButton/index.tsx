@@ -1,5 +1,5 @@
 import { Button, useColorMode } from "@chakra-ui/react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export const ToggleLightButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();

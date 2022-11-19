@@ -1,5 +1,6 @@
 import { PrivateRouts } from "helpers";
 import { createBrowserRouter } from "react-router-dom";
+
 import { AsyncPic, picLoader } from "./AsyncPic";
 import { Cats } from "./Cats";
 import { Files } from "./Files";

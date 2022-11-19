@@ -1,7 +1,8 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { createMemoryRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { theme } from "theme";
+
 import { AsyncPic, picLoader } from "./AsyncPic";
 
 export default {

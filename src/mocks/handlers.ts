@@ -1,4 +1,5 @@
 import { rest } from "msw";
+
 import filesData from "./mockData/files.json";
 
 export const files = rest.get("/api/files", (req, res, ctx) => {

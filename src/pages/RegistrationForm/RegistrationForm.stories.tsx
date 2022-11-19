@@ -1,10 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
-import { RegistrationForm } from "./RegistrationForm";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { userEvent, waitFor, within } from "@storybook/testing-library";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { theme } from "theme";
+
+import { RegistrationForm } from "./RegistrationForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {

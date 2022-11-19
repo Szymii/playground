@@ -2,8 +2,8 @@ import {
   Menu,
   MenuButton,
   IconButton as MenuIconButton,
-  MenuList,
   MenuItem,
+  MenuList,
 } from "@chakra-ui/react";
 import {
   mdiDotsVertical,
@@ -35,7 +35,7 @@ export const ActionButtons = ({ file }: IProps) => {
           test();
           alert("Downloading");
         }}
-      />
+      />,
     );
   }
 
@@ -49,7 +49,7 @@ export const ActionButtons = ({ file }: IProps) => {
         onClick={() => {
           alert(file.editionReason);
         }}
-      />
+      />,
     );
   }
 
@@ -63,7 +63,7 @@ export const ActionButtons = ({ file }: IProps) => {
         onClick={() => {
           alert(file.deletionReason);
         }}
-      />
+      />,
     );
   }
 
@@ -77,7 +77,7 @@ export const ActionButtons = ({ file }: IProps) => {
         onClick={() => {
           alert(file.inactivationReason);
         }}
-      />
+      />,
     );
   }
 
