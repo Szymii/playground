@@ -7,28 +7,44 @@ import {
   List,
   ListIcon,
   ListItem,
+  useBoolean,
 } from "@chakra-ui/react";
 import { mdiCheck, mdiCheckBold } from "@mdi/js";
 import Icon from "@mdi/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 import { goal, useLogsQuery } from "./useLogsQuery";
 
 export const ChangeLog = () => {
   const logs = useLogsQuery();
-  const [show, setShow] = useState(false);
+  const sortedLogs = logs.sort((a, b) =>
+    b.version.localeCompare(a.version, undefined, { numeric: true }),
+  );
 
-  const handleToggle = () => setShow(!show);
+  const [show, setShow] = useBoolean();
+
+  const isLatestVersion = (version: string) => {
+    const latest = "2.3.0".match("\\d{1,}\\.\\d{1,}");
+    const match = version.match("\\d{1,}\\.\\d{1,}");
+
+    if (match && latest) {
+      return match[0] === latest[0];
+    }
+
+    return false;
+  };
+
+  const handleToggle = () => setShow.toggle();
 
   return (
     <Container p="2em">
       <Heading textAlign="center" as="h1" mb="1em">
         ChangeLog
       </Heading>
-      {logs.map(({ version, changes }, index) => {
+      {sortedLogs.map(({ version, changes }) => {
         return (
           <Fragment key={version}>
-            {index === 0 ? (
+            {isLatestVersion(version) ? (
               <>
                 <Heading as="h2" fontSize="1.8rem">
                   {version}
@@ -50,7 +66,6 @@ export const ChangeLog = () => {
       })}
       {logs.length > 1 && (
         <Button onClick={handleToggle} width="100%">
-          {" "}
           {!show ? "Show" : "Hide"} later versions
         </Button>
       )}
