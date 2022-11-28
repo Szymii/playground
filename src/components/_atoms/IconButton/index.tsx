@@ -6,6 +6,7 @@ interface IProps {
   ariaLabel: string;
   title?: string;
   size?: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [rest: string]: any;
 }
 
@@ -13,7 +14,6 @@ export const IconButton = ({
   iconPath,
   ariaLabel,
   title,
-  color = "inherit",
   size = 1,
   ...rest
 }: IProps) => {

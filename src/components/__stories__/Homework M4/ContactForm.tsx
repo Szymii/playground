@@ -17,6 +17,7 @@ export const ContactForm = ({
   onChange,
   onCancel,
 }: IProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onInputChange = (e: any) => {
     const target = e.target;
     const name = target.name;

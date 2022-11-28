@@ -20,6 +20,13 @@ interface IProps {
   file: Attachment;
 }
 
+interface IMenuItem {
+  iconPath: string;
+  ariaLabel: string;
+  title: string;
+  onClick: () => void;
+}
+
 export const ActionButtons = ({ file }: IProps) => {
   const arrayOfButtons: Array<JSX.Element> = [];
   const { test } = useUselessContext();
@@ -91,14 +98,16 @@ export const ActionButtons = ({ file }: IProps) => {
         />
         <MenuList>
           {arrayOfButtons.map(({ props }, index) => {
+            // eslint-disable-next-line react/prop-types
+            const { iconPath, ariaLabel, onClick, title } = props as IMenuItem;
             return (
               <MenuItem
                 key={index}
-                icon={<Icon path={props.iconPath} size={1} />}
-                aria-label={props.ariaLabel}
-                onClick={props.onClick}
+                icon={<Icon path={iconPath} size={1} />}
+                aria-label={ariaLabel}
+                onClick={onClick}
               >
-                {props.title}
+                {title}
               </MenuItem>
             );
           })}

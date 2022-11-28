@@ -16,7 +16,7 @@ export const ContactList = ({ contacts, selected, onSelect }: IProps) => {
       {contacts.map((contact) => (
         <button
           key={contact.id}
-          onClick={(e) => onSelect(contact)}
+          onClick={() => onSelect(contact)}
           className={`list-group-item ${
             selected && selected.id === contact.id ? "active" : ""
           }`}
