@@ -8,9 +8,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "build": "tsc && vite build",
+    "test": "vitest --watch",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "storytest": "test-storybook",
+    "test-s": "test-storybook --watch",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -55,11 +56,13 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-testing-library": "^5.9.1",
     "msw": "^0.47.4",
     "prettier": "^2.7.1",
     "storybook-dark-mode": "^1.1.2",
     "typescript": "^4.6.4",
-    "vite": "^3.1.0"
+    "vite": "^3.1.0",
+    "vitest": "^0.25.3"
   },
   "msw": {
     "workerDirectory": ".storybook\\public"

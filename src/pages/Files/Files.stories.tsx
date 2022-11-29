@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { expect } from "@storybook/jest";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { userEvent, waitFor, within } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { files } from "mocks/handlers";
 import { mswMock } from "mocks/mswMock";
@@ -38,11 +38,9 @@ export const Default = Template.bind({});
 
 export const Interactive = Template.bind({});
 Interactive.play = async ({ canvasElement }) => {
-  const { getByText, getAllByLabelText } = within(canvasElement);
+  const { getByText, findByText, getAllByLabelText } = within(canvasElement);
 
-  await waitFor(() =>
-    expect(getByText("Test_file_one.pdf")).toBeInTheDocument(),
-  );
+  expect(await findByText("Test_file_one.pdf")).toBeInTheDocument();
 
   const menuButton = await getAllByLabelText("Options")[0];
   userEvent.click(menuButton);
