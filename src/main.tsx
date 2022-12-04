@@ -33,7 +33,7 @@ root.render(
       <ChakraProvider theme={theme}>
         <RouterProvider router={router} />
       </ChakraProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   </React.StrictMode>,
 );
