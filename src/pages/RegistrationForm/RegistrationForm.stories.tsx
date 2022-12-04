@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { expect } from "@storybook/jest";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { userEvent, waitFor, within } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { theme } from "theme";
 
@@ -54,15 +54,13 @@ Interactive.play = async ({ canvasElement }) => {
 
 export const Incorrect = Template.bind({});
 Incorrect.play = async ({ canvasElement }) => {
-  const { getByText } = within(canvasElement);
+  const { getByText, findByText } = within(canvasElement);
 
   const policyCheckbox = getByText("Accepting privacy policy and terms of use");
   const submitBtn = getByText("Submit");
   userEvent.click(policyCheckbox);
   userEvent.click(submitBtn);
 
-  await waitFor(() => {
-    expect(getByText("Email is required.")).toBeInTheDocument();
-    expect(getByText("Invalid password.")).toBeInTheDocument();
-  });
+  expect(await findByText("Email is required.")).toBeInTheDocument();
+  expect(await findByText("Invalid password.")).toBeInTheDocument();
 };

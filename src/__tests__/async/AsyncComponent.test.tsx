@@ -6,7 +6,7 @@ import { expect, it } from "vitest";
 
 import { AsyncComponent } from "./AsyncComponent";
 
-it("should render loading state", async () => {
+it("should render loading state first", async () => {
   render(<AsyncComponent />);
 
   expect(screen.getByText("Loading...")).toBeDefined();
