@@ -1,5 +1,5 @@
 import { Flex, Link } from "@chakra-ui/react";
-import { ToggleLightButton } from "components/_atoms";
+import { ToggleLightButton } from "components/atoms";
 import { useUserDataStore } from "modules/users";
 import { Link as RouterLink } from "react-router-dom";
 

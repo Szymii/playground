@@ -12,7 +12,7 @@ import {
   mdiInformationOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import { IconButton } from "components/_atoms";
+import { IconButton } from "components/atoms";
 import { useUselessContext } from "providers";
 import { Attachment } from "types";
 
