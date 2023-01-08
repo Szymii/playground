@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { theme } from "theme";
@@ -30,8 +30,8 @@ export default {
       </QueryClientProvider>
     ),
   ],
-} as ComponentMeta<typeof Nav>;
+} as Meta;
 
-const Template: ComponentStory<typeof Nav> = () => <Nav />;
+const Template: StoryFn = () => <Nav />;
 
 export const Default = Template.bind({});

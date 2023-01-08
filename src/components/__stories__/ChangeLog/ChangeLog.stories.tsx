@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { theme } from "theme";
 
 import { ChangeLog } from "./ChangeLog";
@@ -14,12 +14,10 @@ export default {
       </ChakraProvider>
     ),
   ],
-} as ComponentMeta<typeof ChangeLog>;
+} as Meta;
 
-export const Default = () => {
-  return (
-    <>
-      <ChangeLog />
-    </>
-  );
-};
+export const Default: StoryFn = () => (
+  <>
+    <ChangeLog />
+  </>
+);

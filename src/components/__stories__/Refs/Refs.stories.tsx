@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import { theme } from "theme";
 
 import { Refs } from "./Refs";
@@ -14,7 +14,7 @@ export default {
       </ChakraProvider>
     ),
   ],
-} as ComponentMeta<typeof Refs>;
+} as Meta;
 
 export const Default = () => {
   return (

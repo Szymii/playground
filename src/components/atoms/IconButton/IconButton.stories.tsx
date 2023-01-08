@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { mdiDownload } from "@mdi/js";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { theme } from "theme";
 
 import { IconButton } from ".";
@@ -15,16 +15,13 @@ export default {
       </ChakraProvider>
     ),
   ],
-} as ComponentMeta<typeof IconButton>;
+} as Meta;
 
-const Template: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton {...args} />
-);
-
-export const Primary = Template.bind({});
-Primary.args = {
-  ariaLabel: "download file",
-  title: "download",
-  iconPath: mdiDownload,
-  size: 1,
+export const Primary: StoryObj = {
+  args: {
+    ariaLabel: "download file",
+    title: "download",
+    iconPath: mdiDownload,
+    size: 1,
+  },
 };

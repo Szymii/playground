@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { expect } from "@storybook/jest";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { files } from "mocks/handlers";
@@ -31,9 +31,9 @@ export default {
       </QueryClientProvider>
     ),
   ],
-} as ComponentMeta<typeof Files>;
+} as Meta<typeof Files>;
 
-const Template: ComponentStory<typeof Files> = () => <Files />;
+const Template: StoryFn<typeof Files> = () => <Files />;
 export const Default = Template.bind({});
 
 export const Interactive = Template.bind({});

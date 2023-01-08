@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { theme } from "theme";
 
@@ -25,7 +25,8 @@ export default {
       </QueryClientProvider>
     ),
   ],
-} as ComponentMeta<typeof Cats>;
+} as Meta<typeof Cats>;
 
-const Template: ComponentStory<typeof Cats> = () => <Cats />;
+const Template = () => <Cats />;
+
 export const Default = Template.bind({});
