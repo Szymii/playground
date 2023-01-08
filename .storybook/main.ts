@@ -8,9 +8,9 @@ module.exports = {
     "@storybook/addon-interactions",
     "storybook-dark-mode",
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-vite",
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
   },
   features: {
     storyStoreV7: true,
@@ -20,5 +20,8 @@ module.exports = {
       ...config,
       plugins: [...config.plugins, tsconfigPaths.default()],
     };
+  },
+  docs: {
+    autodocs: false,
   },
 };
