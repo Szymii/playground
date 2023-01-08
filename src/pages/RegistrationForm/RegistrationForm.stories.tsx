@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { expect } from "@storybook/jest";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { theme } from "theme";
@@ -27,11 +27,9 @@ export default {
       </QueryClientProvider>
     ),
   ],
-} as ComponentMeta<typeof RegistrationForm>;
+} as Meta<typeof RegistrationForm>;
 
-const Template: ComponentStory<typeof RegistrationForm> = () => (
-  <RegistrationForm />
-);
+const Template: StoryFn<typeof RegistrationForm> = () => <RegistrationForm />;
 export const Default = Template.bind({});
 
 export const Interactive = Template.bind({});

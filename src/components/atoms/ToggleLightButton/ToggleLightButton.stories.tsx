@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { theme } from "theme";
 
 import { ToggleLightButton } from ".";
@@ -14,10 +14,8 @@ export default {
       </ChakraProvider>
     ),
   ],
-} as ComponentMeta<typeof ToggleLightButton>;
+} as Meta;
 
-const Template: ComponentStory<typeof ToggleLightButton> = () => (
-  <ToggleLightButton />
-);
+const Template: StoryFn = () => <ToggleLightButton />;
 
 export const Default = Template.bind({});

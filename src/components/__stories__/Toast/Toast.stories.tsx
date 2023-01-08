@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Global, css } from "@emotion/react";
-import { ComponentMeta } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import { Link, RouterProvider, createMemoryRouter } from "react-router-dom";
 import { theme } from "theme";
 
@@ -24,7 +24,7 @@ export default {
       </ChakraProvider>
     ),
   ],
-} as ComponentMeta<typeof ToastExample>;
+} as Meta;
 
 const router = createMemoryRouter([
   {

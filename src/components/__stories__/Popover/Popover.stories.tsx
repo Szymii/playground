@@ -1,5 +1,5 @@
 import { Button, ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { theme } from "theme";
 
 import { Popover } from "./Popover";
@@ -14,9 +14,9 @@ export default {
       </ChakraProvider>
     ),
   ],
-} as ComponentMeta<typeof Popover>;
+} as Meta;
 
-export const Default = () => {
+export const Default: StoryFn = () => {
   return (
     <Popover>
       <Button position="fixed" top="20px" right="50%">

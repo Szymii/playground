@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { theme } from "theme";
 
@@ -15,7 +15,7 @@ export default {
       </ChakraProvider>
     ),
   ],
-} as ComponentMeta<typeof AsyncPic>;
+} as Meta<typeof AsyncPic>;
 
 const router = createMemoryRouter([
   {
@@ -25,7 +25,6 @@ const router = createMemoryRouter([
   },
 ]);
 
-const Template: ComponentStory<typeof AsyncPic> = () => (
-  <RouterProvider router={router} />
-);
+const Template = () => <RouterProvider router={router} />;
+
 export const Default = Template.bind({});
