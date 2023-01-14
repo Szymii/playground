@@ -9,12 +9,14 @@ export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),
-    checker({
-      typescript: true,
-      eslint: {
-        lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
-      },
-    }),
+    !process.env.VITEST
+      ? checker({
+          typescript: true,
+          eslint: {
+            lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
+          },
+        })
+      : undefined,
   ],
   test: {
     globals: true,
