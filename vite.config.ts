@@ -20,6 +20,6 @@ export default defineConfig({
   ],
   test: {
     globals: true,
-    setupFiles: ["./src/setupTest.ts"],
+    setupFiles: ["src/setupTest.ts"],
   },
 });
