@@ -1,9 +1,9 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { mdiDownload } from "@mdi/js";
 import { Meta, StoryObj } from "@storybook/react";
-import { theme } from "theme";
 
 import { IconButton } from ".";
+import { theme } from "../../theme";
 
 export default {
   title: "Atoms/IconButton",

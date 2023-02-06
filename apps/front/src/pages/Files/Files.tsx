@@ -1,5 +1,5 @@
 import { Container, Heading, VStack } from "@chakra-ui/react";
-import { ErrorBoundary } from "components";
+import { ErrorBoundary } from "@szymii/ui";
 import { FilesList } from "modules/files";
 import { UselessContextProvider } from "providers";
 
