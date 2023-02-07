@@ -1,3 +1,7 @@
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "@szymii/ui";
+import React from "react";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +11,7 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (story) => React.createElement(ChakraProvider, { children: story(), theme }),
+];

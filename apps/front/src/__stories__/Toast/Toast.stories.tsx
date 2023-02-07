@@ -1,8 +1,6 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import { Global, css } from "@emotion/react";
 import { Meta } from "@storybook/react";
 import { Link, RouterProvider, createMemoryRouter } from "react-router-dom";
-import { theme } from "theme";
 
 import { ToastExample } from "./ToastExample";
 
@@ -11,7 +9,7 @@ export default {
   component: ToastExample,
   decorators: [
     (Story) => (
-      <ChakraProvider theme={theme}>
+      <>
         <Global
           styles={css`
             .chakra-alert__title,
@@ -21,7 +19,7 @@ export default {
           `}
         />
         <Story />
-      </ChakraProvider>
+      </>
     ),
   ],
 } as Meta;

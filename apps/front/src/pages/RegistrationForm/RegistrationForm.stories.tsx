@@ -1,9 +1,7 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import { expect } from "@storybook/jest";
 import { Meta, StoryFn } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { theme } from "theme";
 
 import { RegistrationForm } from "./RegistrationForm";
 
@@ -21,9 +19,7 @@ export default {
   decorators: [
     (Story) => (
       <QueryClientProvider client={queryClient}>
-        <ChakraProvider theme={theme}>
-          <Story />
-        </ChakraProvider>
+        <Story />
       </QueryClientProvider>
     ),
   ],
