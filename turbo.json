@@ -8,6 +8,12 @@
       "cache": false,
       "persistent": true
     },
-    "lint": {}
+    "storybook": {},
+    "build-storybook": {},
+    "test-story": {},
+    "preview": {},
+    "test": {},
+    "lint": {},
+    "lint:fix": {}
   }
 }
