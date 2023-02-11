@@ -5,7 +5,11 @@ export const ToggleLightButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Button onClick={toggleColorMode} variant="ghost">
+    <Button
+      onClick={toggleColorMode}
+      variant="ghost"
+      aria-label="toggle light mode"
+    >
       {colorMode === "dark" ? <FaSun /> : <FaMoon />}
     </Button>
   );
