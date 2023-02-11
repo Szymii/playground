@@ -1,0 +1,1 @@
+export { withQueryClient } from "./withQueryClient";

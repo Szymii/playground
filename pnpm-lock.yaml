@@ -157,6 +157,8 @@ importers:
       tsconfig: workspace:*
       tsup: ^6.5.0
       typescript: ^4.9.5
+    dependencies:
+      react-router-dom: 6.7.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@chakra-ui/react': 2.4.9_teqapbmx7qcfgwzgcbp7xslvp4
       '@emotion/react': 11.10.5_yxdp3dl3eazy3vwpbmv4fq727a
@@ -181,7 +183,6 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-error-boundary: 3.1.4_react@18.2.0
       react-icons: 4.7.1_react@18.2.0
-      react-router-dom: 6.7.0_biqbaboplfbrettd7655fr4n2y
       storybook: 7.0.0-beta.46
       storybook-dark-mode: 1.1.2_biqbaboplfbrettd7655fr4n2y
       tsconfig: link:../tsconfig
@@ -3440,6 +3441,7 @@ packages:
   /@remix-run/router/1.3.0:
     resolution: {integrity: sha512-nwQoYb3m4DDpHTeOwpJEuDt8lWVcujhYYSFGLluC+9es2PyLjm+jjq3IeRBQbwBtPLJE/lkuHuGHr8uQLgmJRA==}
     engines: {node: '>=14'}
+    dev: false
 
   /@rollup/pluginutils/4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -10774,6 +10776,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router: 6.7.0_react@18.2.0
+    dev: false
 
   /react-router/6.7.0_react@18.2.0:
     resolution: {integrity: sha512-KNWlG622ddq29MAM159uUsNMdbX8USruoKnwMMQcs/QWZgFUayICSn2oB7reHce1zPj6CG18kfkZIunSSRyGHg==}
@@ -10783,6 +10786,7 @@ packages:
     dependencies:
       '@remix-run/router': 1.3.0
       react: 18.2.0
+    dev: false
 
   /react-style-singleton/2.2.1_3stiutgnnbnfnf3uowm5cip22i:
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}

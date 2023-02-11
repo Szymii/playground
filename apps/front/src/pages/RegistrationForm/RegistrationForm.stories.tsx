@@ -1,28 +1,14 @@
 import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { withQueryClient } from "helpers";
 
 import { RegistrationForm } from "./RegistrationForm";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      suspense: true,
-    },
-  },
-});
 
 export default {
   title: "Pages/RegistrationForm",
   component: RegistrationForm,
-  decorators: [
-    (Story) => (
-      <QueryClientProvider client={queryClient}>
-        <Story />
-      </QueryClientProvider>
-    ),
-  ],
+  decorators: [withQueryClient()],
 } as Meta<typeof RegistrationForm>;
 
 export const Default = {

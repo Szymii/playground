@@ -1,7 +1,7 @@
 import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { withQueryClient } from "helpers";
 import { files } from "mocks/handlers";
 import { mswMock } from "mocks/mswMock";
 
@@ -9,24 +9,10 @@ import { Files } from "./Files";
 
 mswMock(files);
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      suspense: true,
-    },
-  },
-});
-
 export default {
   title: "Pages/Files",
   component: Files,
-  decorators: [
-    (Story) => (
-      <QueryClientProvider client={queryClient}>
-        <Story />
-      </QueryClientProvider>
-    ),
-  ],
+  decorators: [withQueryClient()],
 } as Meta<typeof Files>;
 
 export const Default = {
