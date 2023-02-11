@@ -3,10 +3,10 @@ import Icon from "@mdi/react";
 import { getIconByExtension } from "helpers";
 
 import { ActionButtons } from "./ActionButtons";
-import { useFilesQuery } from "./useFilesQuery";
+import { useFilesConsumer } from "./FilesProvider";
 
 export const FilesList = () => {
-  const files = useFilesQuery();
+  const files = useFilesConsumer();
 
   return (
     <VStack spacing="15" w="100%">

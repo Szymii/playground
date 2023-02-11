@@ -13,7 +13,6 @@ import {
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import { IconButton } from "@szymii/ui";
-import { useUselessContext } from "providers";
 import { Attachment } from "types";
 
 interface IProps {
@@ -29,7 +28,6 @@ interface IMenuItem {
 
 export const ActionButtons = ({ file }: IProps) => {
   const arrayOfButtons: Array<JSX.Element> = [];
-  const { test } = useUselessContext();
 
   if (!file.inactivatedAt && !file.deletedAt) {
     arrayOfButtons.push(
@@ -39,7 +37,6 @@ export const ActionButtons = ({ file }: IProps) => {
         iconPath={mdiDownload}
         width="100%"
         onClick={() => {
-          test();
           alert("Downloading");
         }}
       />,

@@ -3,10 +3,8 @@ import { Attachment } from "types";
 
 import { FilesSchema } from "./FilesSchema";
 
-type Files = Array<Attachment>;
-
 export const useFilesQuery = () => {
-  const { data } = useSuspense<Files>("files", "/api/files");
+  const { data } = useSuspense<Attachment[]>("files", "/api/files");
 
   const result = FilesSchema.parse(data);
 

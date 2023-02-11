@@ -1,11 +1,10 @@
 import { Container, Heading, VStack } from "@chakra-ui/react";
 import { ErrorBoundary } from "@szymii/ui";
-import { FilesList } from "modules/files";
-import { UselessContextProvider } from "providers";
+import { FilesList, FilesProvider } from "modules/files";
 
 export const Files = () => {
   return (
-    <UselessContextProvider>
+    <FilesProvider>
       <Container p="2em">
         <Heading textAlign="center" mb="1em">
           Files
@@ -16,6 +15,6 @@ export const Files = () => {
           </ErrorBoundary>
         </VStack>
       </Container>
-    </UselessContextProvider>
+    </FilesProvider>
   );
 };
