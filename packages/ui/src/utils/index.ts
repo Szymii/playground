@@ -1,0 +1,1 @@
+export { withReactRouter } from "./withReactRouter";

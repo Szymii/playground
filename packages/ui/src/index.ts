@@ -1,3 +1,3 @@
-export { ToggleLightButton, IconButton } from "./atoms";
-export { ErrorBoundary } from "./molecules";
+export { ToggleLightButton, IconButton, Link } from "./atoms";
+export { ErrorBoundary, Nav } from "./molecules";
 export { theme } from "./theme";

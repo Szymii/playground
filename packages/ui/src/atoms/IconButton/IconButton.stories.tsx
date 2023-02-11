@@ -3,12 +3,9 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { IconButton } from ".";
 
-const meta = {
-  title: "Atoms/IconButton",
+export default {
   component: IconButton,
 } as Meta<typeof IconButton>;
-
-export default meta;
 
 export const Default: StoryObj<typeof IconButton> = {
   args: {
