@@ -1,12 +1,10 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { ToggleLightButton } from ".";
 
 export default {
   title: "Atoms/ToggleLightButton",
   component: ToggleLightButton,
-} as Meta;
+} as Meta<typeof ToggleLightButton>;
 
-const Template: StoryFn = () => <ToggleLightButton />;
-
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof ToggleLightButton> = {};

@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { Cats } from "./Cats";
@@ -23,6 +23,4 @@ export default {
   ],
 } as Meta<typeof Cats>;
 
-const Template = () => <Cats />;
-
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof Cats> = {};

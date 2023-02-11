@@ -1,5 +1,5 @@
 import { expect } from "@storybook/jest";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { files } from "mocks/handlers";
@@ -29,17 +29,21 @@ export default {
   ],
 } as Meta<typeof Files>;
 
-const Template: StoryFn<typeof Files> = () => <Files />;
-export const Default = Template.bind({});
+export const Default = {
+  render: () => <Files />,
+};
 
-export const Interactive = Template.bind({});
-Interactive.play = async ({ canvasElement }) => {
-  const { getByText, findByText, getAllByLabelText } = within(canvasElement);
+export const Interactive: StoryObj<typeof Files> = {
+  render: () => <Files />,
 
-  expect(await findByText("Test_file_one.pdf")).toBeInTheDocument();
+  play: async ({ canvasElement }) => {
+    const { getByText, findByText, getAllByLabelText } = within(canvasElement);
 
-  const menuButton = await getAllByLabelText("Options")[0];
-  userEvent.click(menuButton);
+    expect(await findByText("Test_file_one.pdf")).toBeInTheDocument();
 
-  expect(getByText("Download file")).toBeInTheDocument();
+    const menuButton = await getAllByLabelText("Options")[0];
+    userEvent.click(menuButton);
+
+    expect(getByText("Download file")).toBeInTheDocument();
+  },
 };

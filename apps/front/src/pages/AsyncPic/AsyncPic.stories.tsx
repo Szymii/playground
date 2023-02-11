@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 
 import { AsyncPic, picLoader } from "./AsyncPic";
@@ -16,6 +16,6 @@ const router = createMemoryRouter([
   },
 ]);
 
-const Template = () => <RouterProvider router={router} />;
-
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof AsyncPic> = {
+  render: () => <RouterProvider router={router} />,
+};
