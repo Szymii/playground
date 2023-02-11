@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "storybook": "storybook dev -p 6008",
-    "test-story": "test-storybook --watch",
+    "test-story": "test-storybook --watch --url http://localhost:6008/",
     "build-storybook": "storybook build"
   },
   "devDependencies": {
