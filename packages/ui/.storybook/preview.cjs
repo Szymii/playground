@@ -11,6 +11,8 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  a11y: { disable: false },
+  snapshot: { disable: false },
 };
 
 export const decorators = [

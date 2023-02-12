@@ -153,6 +153,7 @@ importers:
       eslint: ^8.34.0
       eslint-config-shared: workspace:*
       framer-motion: ^7.5.2
+      jest-image-snapshot: ^6.1.0
       react: ^18.2.0
       react-dom: ^18.2.0
       react-error-boundary: ^3.1.4
@@ -187,6 +188,7 @@ importers:
       eslint: 8.34.0
       eslint-config-shared: link:../eslintconfig
       framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
+      jest-image-snapshot: 6.1.0_jest@28.1.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-error-boundary: 3.1.4_react@18.2.0
@@ -7999,6 +8001,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /get-stdin/5.0.1:
+    resolution: {integrity: sha512-jZV7n6jGE3Gt7fgSTJoz91Ak5MuTLwMwkoYdjxuJ/AmjIsE1UC03y/IWkZCQGEvVNS9qoRNwy5BCqxImv0FVeA==}
+    engines: {node: '>=0.12.0'}
+    dev: true
+
   /get-stream/6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
@@ -8158,6 +8165,10 @@ packages:
   /globrex/0.1.2:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: false
+
+  /glur/1.1.2:
+    resolution: {integrity: sha512-l+8esYHTKOx2G/Aao4lEQ0bnHWg4fWtJbVoZZT9Knxi01pB8C80BR85nONLFwkkQoFRCmXY+BUcGZN3yZ2QsRA==}
+    dev: true
 
   /gopd/1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
@@ -9047,6 +9058,24 @@ packages:
       walker: 1.0.8
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /jest-image-snapshot/6.1.0_jest@28.1.3:
+    resolution: {integrity: sha512-LZYoks6V1HAkYqyi80gUjMWVsa++Oy0fckAGMLBQseVweZT9AmJNKAINwHLqX1fpeMy2hTG5CCEe4IUX2N3Nmg==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      jest: '>=20 <=29'
+    dependencies:
+      chalk: 4.1.2
+      get-stdin: 5.0.1
+      glur: 1.1.2
+      jest: 28.1.3
+      lodash: 4.17.21
+      mkdirp: 0.5.6
+      pixelmatch: 5.3.0
+      pngjs: 3.4.0
+      rimraf: 2.7.1
+      ssim.js: 3.5.0
     dev: true
 
   /jest-junit/14.0.1:
@@ -10430,6 +10459,13 @@ packages:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
     engines: {node: '>= 6'}
 
+  /pixelmatch/5.3.0:
+    resolution: {integrity: sha512-o8mkY4E/+LNUf6LzX96ht6k6CEDi65k9G2rjMtBe9Oo+VPKSvl+0GKHuH/AlG+GA5LPG/i5hrekkxUc3s2HU+Q==}
+    hasBin: true
+    dependencies:
+      pngjs: 6.0.0
+    dev: true
+
   /pkg-dir/3.0.0:
     resolution: {integrity: sha512-/E57AYkoeQ25qkxMj5PBOVgF8Kiu/h7cYS30Z5+R7WaiCCBfLq58ZI/dSeaEKb9WVJV5n/03QwrN3IeWIFllvw==}
     engines: {node: '>=6'}
@@ -10464,6 +10500,16 @@ packages:
     requiresBuild: true
     dependencies:
       playwright-core: 1.29.2
+    dev: true
+
+  /pngjs/3.4.0:
+    resolution: {integrity: sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==}
+    engines: {node: '>=4.0.0'}
+    dev: true
+
+  /pngjs/6.0.0:
+    resolution: {integrity: sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==}
+    engines: {node: '>=12.13.0'}
     dev: true
 
   /polished/4.2.2:
@@ -11451,6 +11497,10 @@ packages:
 
   /sprintf-js/1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
+    dev: true
+
+  /ssim.js/3.5.0:
+    resolution: {integrity: sha512-Aj6Jl2z6oDmgYFFbQqK7fght19bXdOxY7Tj03nF+03M9gCBAjeIiO8/PlEGMfKDwYpw4q6iBqVq2YuREorGg/g==}
     dev: true
 
   /stack-utils/2.0.6:
