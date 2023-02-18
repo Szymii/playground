@@ -77,7 +77,12 @@ const RegistrationFormThrowable = () => {
               </HStack>
             </RadioGroup>
           </FormControl>
-          <Select placeholder="Workplace" {...register("workplace")}>
+          <Select
+            placeholder="Workplace"
+            {...register("workplace")}
+            name="workplace"
+            aria-label="workplace-select"
+          >
             <option value="frontend">Frontend</option>
             <option value="backend">Backend</option>
             <option value="fullstack">Fullstack</option>

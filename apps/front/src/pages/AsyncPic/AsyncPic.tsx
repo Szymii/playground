@@ -30,6 +30,7 @@ export const AsyncPic = () => {
         boxSize="600px"
         objectFit="cover"
         borderRadius="15px"
+        alt="random photo - no idea whats on them"
       />
     </Container>
   );

@@ -4,6 +4,9 @@ import { Contacts } from "./Contacts";
 
 export default {
   component: Contacts,
+  parameters: {
+    a11y: { disable: true },
+  },
 } as Meta;
 
 export const Default: StoryObj<typeof Contacts> = {

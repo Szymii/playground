@@ -14,7 +14,6 @@ export const useCatModal = createModalStore<{ id: string }>();
 
 export const CatModal = () => {
   const { isOpen, onClose, modalData } = useCatModal();
-  const { id } = modalData;
 
   return (
     <ChakraModal isOpen={isOpen} onClose={onClose}>
@@ -25,7 +24,7 @@ export const CatModal = () => {
         <ModalBody pb="5">
           <Box>
             <Image
-              src={`https://cataas.com/cat/${id}`}
+              src={`https://cataas.com/cat/${modalData.id}`}
               objectFit="cover"
               w="100%"
               maxH="400px"

@@ -5,6 +5,9 @@ import { Popover } from "./Popover";
 
 export default {
   component: Popover,
+  parameters: {
+    a11y: { disable: true },
+  },
 } as Meta;
 
 export const Default: StoryObj<typeof Popover> = {

@@ -13,7 +13,7 @@ module.exports = {
     }
 
     await checkA11y(page, "#storybook-root", {
-      detailedReport: true,
+      detailedReport: false,
       detailedReportOptions: {
         html: true,
       },

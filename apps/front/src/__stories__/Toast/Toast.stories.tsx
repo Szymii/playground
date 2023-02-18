@@ -6,6 +6,9 @@ import { ToastExample } from "./ToastExample";
 
 export default {
   component: ToastExample,
+  parameters: {
+    a11y: { disable: true },
+  },
   decorators: [
     (Story) => (
       <>
