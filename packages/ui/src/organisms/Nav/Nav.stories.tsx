@@ -7,7 +7,7 @@ import { withReactRouter } from "../../utils";
 export default {
   component: Nav,
   decorators: [withReactRouter()],
-} as Meta<typeof Nav>;
+} as Meta;
 
 export const Default: StoryObj<typeof Nav> = {};
 

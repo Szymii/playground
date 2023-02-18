@@ -1,11 +1,10 @@
 import { Global, css } from "@emotion/react";
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Link, RouterProvider, createMemoryRouter } from "react-router-dom";
 
 import { ToastExample } from "./ToastExample";
 
 export default {
-  title: "Concept/Toast",
   component: ToastExample,
   decorators: [
     (Story) => (
@@ -39,6 +38,6 @@ const router = createMemoryRouter([
   },
 ]);
 
-export const Default = () => {
-  return <RouterProvider router={router} />;
+export const Default: StoryObj<typeof ToastExample> = {
+  render: () => <RouterProvider router={router} />,
 };

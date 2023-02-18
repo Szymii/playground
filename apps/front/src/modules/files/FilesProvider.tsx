@@ -25,3 +25,28 @@ export const useFilesConsumer = () => {
 
   return context;
 };
+
+export const withFiles = (files?: Attachment[]) => {
+  const fixture = [
+    {
+      id: "l3orpzhugbvef291sd54yin08mk7x6jt",
+      fileName: "Test_file_one.pdf",
+      fileExtension: "pdf",
+      createdAt: "2022-09-30 14:15",
+      editedAt: "2022-09-30 15:15",
+      editionReason: "Typo",
+      inactivatedAt: null,
+      inactivationReason: null,
+      deletedAt: null,
+      deletionReason: null,
+    },
+  ];
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  return (Story) => (
+    <FilesContext.Provider value={files ? files : fixture}>
+      <Story />
+    </FilesContext.Provider>
+  );
+};

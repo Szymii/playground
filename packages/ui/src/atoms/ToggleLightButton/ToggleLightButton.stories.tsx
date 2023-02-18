@@ -4,6 +4,6 @@ import { ToggleLightButton } from ".";
 
 export default {
   component: ToggleLightButton,
-} as Meta<typeof ToggleLightButton>;
+} as Meta;
 
 export const Default: StoryObj<typeof ToggleLightButton> = {};

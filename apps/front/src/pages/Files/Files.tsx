@@ -4,17 +4,17 @@ import { FilesList, FilesProvider } from "modules/files";
 
 export const Files = () => {
   return (
-    <FilesProvider>
-      <Container p="2em">
-        <Heading textAlign="center" mb="1em">
-          Files
-        </Heading>
-        <VStack spacing="1em">
-          <ErrorBoundary message="No files this time">
+    <Container p="2em">
+      <Heading textAlign="center" mb="1em">
+        Files
+      </Heading>
+      <VStack spacing="1em">
+        <ErrorBoundary message="No files this time">
+          <FilesProvider>
             <FilesList />
-          </ErrorBoundary>
-        </VStack>
-      </Container>
-    </FilesProvider>
+          </FilesProvider>
+        </ErrorBoundary>
+      </VStack>
+    </Container>
   );
 };

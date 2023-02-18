@@ -1,14 +1,13 @@
-import { ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Contacts } from "./Contacts";
 
 export default {
-  title: "Concept/Contacts",
   component: Contacts,
-} as ComponentMeta<typeof Contacts>;
+} as Meta;
 
-export const ContactsContainer = () => {
-  return (
+export const Default: StoryObj<typeof Contacts> = {
+  render: () => (
     <>
       <link
         rel="stylesheet"
@@ -18,5 +17,5 @@ export const ContactsContainer = () => {
       />
       <Contacts />
     </>
-  );
+  ),
 };

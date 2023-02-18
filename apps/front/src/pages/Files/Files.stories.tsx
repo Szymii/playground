@@ -10,24 +10,19 @@ import { Files } from "./Files";
 mswMock(files);
 
 export default {
-  title: "Pages/Files",
   component: Files,
   decorators: [withQueryClient()],
-} as Meta<typeof Files>;
+} as Meta;
 
-export const Default = {
-  render: () => <Files />,
-};
+export const Default: StoryObj<typeof Files> = {};
 
 export const Interactive: StoryObj<typeof Files> = {
-  render: () => <Files />,
-
   play: async ({ canvasElement }) => {
     const { getByText, findByText, getAllByLabelText } = within(canvasElement);
 
     expect(await findByText("Test_file_one.pdf")).toBeInTheDocument();
 
-    const menuButton = await getAllByLabelText("Options")[0];
+    const menuButton = getAllByLabelText("Options")[0];
     userEvent.click(menuButton);
 
     expect(getByText("Download file")).toBeInTheDocument();

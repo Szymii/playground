@@ -6,7 +6,7 @@ import { withReactRouter } from "../../utils";
 export default {
   component: Link,
   decorators: [withReactRouter()],
-} as Meta<typeof Link>;
+} as Meta;
 
 export const Default: StoryObj<typeof Link> = {
   args: {
