@@ -1,23 +1,16 @@
 import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { within } from "@storybook/testing-library";
+import { withRouter } from "helpers";
 import { IRegistrationForm, useUserDataStore } from "modules/users";
 import { useEffect } from "react";
-import { RouterProvider, createMemoryRouter } from "react-router-dom";
 
 import { Main } from "./Main";
 
 export default {
   component: Main,
-  decorators: [],
+  decorators: [withRouter()],
 } as Meta;
-
-const router = createMemoryRouter([
-  {
-    path: "/",
-    element: <Main />,
-  },
-]);
 
 export const Default: StoryObj<typeof Main> = {
   render: () => {
@@ -26,7 +19,7 @@ export const Default: StoryObj<typeof Main> = {
         userData: {} as IRegistrationForm,
       });
     }, []);
-    return <RouterProvider router={router} />;
+    return <Main />;
   },
   play: async ({ canvasElement }) => {
     const { queryByText } = within(canvasElement);
@@ -44,12 +37,12 @@ export const WithUserProfile: StoryObj<typeof Main> = {
         } as IRegistrationForm,
       });
     }, []);
-    return <RouterProvider router={router} />;
+    return <Main />;
   },
   play: async ({ canvasElement }) => {
-    const { getAllByText } = within(canvasElement);
+    const { findAllByText } = within(canvasElement);
 
-    const profile = getAllByText("Profile");
+    const profile = await findAllByText("Profile");
 
     // mobile and desktop nav
     expect(profile.length).toBe(2);
