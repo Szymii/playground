@@ -14,9 +14,6 @@ module.exports = {
 
     await checkA11y(page, "#storybook-root", {
       detailedReport: false,
-      detailedReportOptions: {
-        html: true,
-      },
       axeOptions: storyContext.parameters?.a11y?.options,
     });
   },

@@ -1,6 +1,6 @@
 import {
-  Box,
   Container,
+  FormControl,
   FormLabel,
   HStack,
   Heading,
@@ -16,19 +16,19 @@ export const UserProfile = () => {
 
   return (
     <Container p="2em">
-      <Heading textAlign="center" mb="1em">
+      <Heading textAlign="center" mb="1em" data-testid={"user-greeting"}>
         Hi {userData.firstName}
       </Heading>
       <VStack spacing="1em">
-        <Box w="100%">
+        <FormControl>
           <FormLabel>Email address</FormLabel>
           <Input type="text" value={userData.emailAddress} disabled />
-        </Box>
-        <Box w="100%">
+        </FormControl>
+        <FormControl>
           <FormLabel>Workplace</FormLabel>
           <Input type="text" value={userData.workplace} disabled />
-        </Box>
-        <Box w="100%">
+        </FormControl>
+        <FormControl>
           <FormLabel>Gender</FormLabel>
           <RadioGroup defaultValue="Man" value={userData.gender}>
             <HStack spacing="24px">
@@ -40,7 +40,7 @@ export const UserProfile = () => {
               </Radio>
             </HStack>
           </RadioGroup>
-        </Box>
+        </FormControl>
       </VStack>
     </Container>
   );

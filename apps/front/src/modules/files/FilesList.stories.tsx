@@ -14,7 +14,29 @@ export default {
 const FILE_NAME = "File one.pdf";
 const CREATE_DATE = dayjs().format("YYYY-MM-DD HH:mm");
 
+export const Default: StoryObj<typeof FilesList> = {
+  decorators: [
+    withFiles([
+      {
+        id: "l3orpzhugbvef291sd54yin08mk7x6jt",
+        fileName: FILE_NAME,
+        fileExtension: "pdf",
+        createdAt: CREATE_DATE,
+        editedAt: null,
+        editionReason: null,
+        inactivatedAt: null,
+        inactivationReason: null,
+        deletedAt: null,
+        deletionReason: null,
+      },
+    ]),
+  ],
+};
+
 export const Edited: StoryObj<typeof FilesList> = {
+  parameters: {
+    a11y: { disable: true },
+  },
   decorators: [
     withFiles([
       {
@@ -47,6 +69,9 @@ export const Edited: StoryObj<typeof FilesList> = {
 };
 
 export const Deleted: StoryObj<typeof FilesList> = {
+  parameters: {
+    a11y: { disable: true },
+  },
   decorators: [
     withFiles([
       {

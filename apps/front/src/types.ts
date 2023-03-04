@@ -1,9 +1,9 @@
-enum GenderEnum {
+export enum GenderEnum {
   female = "female",
   male = "male",
 }
 
-enum WorkplaceEnum {
+export enum WorkplaceEnum {
   frontend = "frontend",
   backend = "backend",
   fullstack = "fullstack",

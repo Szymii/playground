@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 
-import { AsyncPic, picLoader } from "./AsyncPic";
+import { AsyncPic } from "./AsyncPic";
 
 export default {
   component: AsyncPic,
@@ -11,7 +11,11 @@ const router = createMemoryRouter([
   {
     path: "/",
     element: <AsyncPic />,
-    loader: picLoader,
+    loader: () => {
+      return new Promise((res) => {
+        res({ download_url: `https://picsum.photos/id/2/5000/3333` });
+      });
+    },
   },
 ]);
 
