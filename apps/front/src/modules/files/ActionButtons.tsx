@@ -13,10 +13,11 @@ import {
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import { IconButton } from "@szymii/ui";
-import { Attachment } from "types";
+
+import { IAttachment } from "./IAttachment";
 
 interface IProps {
-  file: Attachment;
+  file: IAttachment;
 }
 
 interface IMenuItem {

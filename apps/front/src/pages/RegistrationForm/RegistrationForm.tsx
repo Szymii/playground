@@ -15,9 +15,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { ErrorBoundary } from "@szymii/ui";
-import { useUserDataStore } from "modules/users";
+import { IRegistrationForm, useUserDataStore } from "modules/users";
 import { useForm } from "react-hook-form";
-import { IRegistrationForm } from "types";
 
 const RegistrationFormThrowable = () => {
   const {

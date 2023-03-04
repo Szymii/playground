@@ -1,9 +1,13 @@
 import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { within } from "@storybook/testing-library";
-import { useUserDataStore } from "modules/users";
+import {
+  GenderEnum,
+  IRegistrationForm,
+  WorkplaceEnum,
+  useUserDataStore,
+} from "modules/users";
 import { useEffect } from "react";
-import { GenderEnum, IRegistrationForm, WorkplaceEnum } from "types";
 
 import { UserProfile } from "./UserProfile";
 

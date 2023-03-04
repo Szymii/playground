@@ -1,13 +1,13 @@
 import { ReactNode, createContext, useContext } from "react";
-import { Attachment } from "types";
 
+import { IAttachment } from "./IAttachment";
 import { useFilesQuery } from "./useFilesQuery";
 
 interface IProps {
   children: ReactNode;
 }
 
-const FilesContext = createContext<Attachment[] | undefined>(undefined);
+const FilesContext = createContext<IAttachment[] | undefined>(undefined);
 
 export const FilesProvider = ({ children }: IProps) => {
   const files = useFilesQuery();
@@ -26,7 +26,7 @@ export const useFilesConsumer = () => {
   return context;
 };
 
-export const withFiles = (files?: Attachment[]) => {
+export const withFiles = (files?: IAttachment[]) => {
   const fixture = [
     {
       id: "l3orpzhugbvef291sd54yin08mk7x6jt",

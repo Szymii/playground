@@ -1,10 +1,9 @@
 import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
 import { within } from "@storybook/testing-library";
-import { useUserDataStore } from "modules/users";
+import { IRegistrationForm, useUserDataStore } from "modules/users";
 import { useEffect } from "react";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
-import { IRegistrationForm } from "types";
 
 import { Main } from "./Main";
 

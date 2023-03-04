@@ -1,5 +1,11 @@
-import { IRegistrationForm, IUserState } from "types";
 import { create } from "zustand";
+
+import { IRegistrationForm } from "./types";
+
+export interface IUserState {
+  userData: IRegistrationForm;
+  setUserData: (userData: IRegistrationForm) => void;
+}
 
 export const useUserDataStore = create<IUserState>((set) => ({
   userData: {} as IRegistrationForm,
