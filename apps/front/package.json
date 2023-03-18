@@ -56,6 +56,7 @@
     "eslint-config-shared": "workspace:*",
     "jsdom": "^20.0.3",
     "msw": "^0.47.4",
+    "msw-storybook-addon": "^1.8.0",
     "storybook": "^7.0.0-rc.1",
     "storybook-dark-mode": "^1.1.2",
     "typescript": "^4.9.5",

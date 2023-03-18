@@ -3,15 +3,17 @@ import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { withQueryClient } from "helpers";
 import { files } from "mocks/handlers";
-import { mswMock } from "mocks/mswMock";
 
 import { Files } from "./Files";
-
-mswMock(files);
 
 export default {
   component: Files,
   decorators: [withQueryClient()],
+  parameters: {
+    msw: {
+      handlers: [files],
+    },
+  },
 } as Meta;
 
 export const Default: StoryObj<typeof Files> = {};

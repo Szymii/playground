@@ -1,7 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Preview } from "@storybook/react";
 import { theme } from "@szymii/ui";
+import { initialize, mswDecorator } from "msw-storybook-addon";
 import React from "react";
+
+initialize();
 
 const preview: Preview = {
   parameters: {
@@ -14,6 +17,7 @@ const preview: Preview = {
     },
   },
   decorators: [
+    mswDecorator,
     (story) =>
       React.createElement(ChakraProvider, { children: story(), theme }),
   ],
