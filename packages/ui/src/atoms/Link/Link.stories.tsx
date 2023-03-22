@@ -3,12 +3,15 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Link } from ".";
 import { withReactRouter } from "../../utils";
 
-export default {
+const meta = {
   component: Link,
   decorators: [withReactRouter()],
-} as Meta;
+} satisfies Meta<typeof Link>;
 
-export const Default: StoryObj<typeof Link> = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {
     to: "/test",
     children: "Link",

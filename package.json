@@ -14,7 +14,7 @@
     "build-storybook": "turbo run build-storybook"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^3.4.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "prettier": "^2.8.4",
     "turbo": "^1.7.3"
   }

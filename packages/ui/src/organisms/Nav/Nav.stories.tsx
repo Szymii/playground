@@ -4,14 +4,15 @@ import { Nav } from ".";
 import { Link } from "../../atoms";
 import { withReactRouter } from "../../utils";
 
-export default {
+const meta = {
   component: Nav,
   decorators: [withReactRouter()],
-} as Meta;
+} satisfies Meta<typeof Nav>;
 
-export const Default: StoryObj<typeof Nav> = {};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const WithLinks: StoryObj<typeof Nav> = {
+export const Default: Story = {
   args: {
     children: (
       <>

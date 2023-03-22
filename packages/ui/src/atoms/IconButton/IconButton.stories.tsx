@@ -3,11 +3,14 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { IconButton } from ".";
 
-export default {
+const meta = {
   component: IconButton,
-} as Meta;
+} satisfies Meta<typeof IconButton>;
 
-export const Default: StoryObj<typeof IconButton> = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {
     ariaLabel: "download file",
     title: "download",
