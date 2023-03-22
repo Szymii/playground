@@ -5,14 +5,17 @@ import { withQueryClient } from "helpers";
 
 import { RegistrationForm } from "./RegistrationForm";
 
-export default {
+const meta = {
   component: RegistrationForm,
   decorators: [withQueryClient()],
-} as Meta;
+} satisfies Meta<typeof RegistrationForm>;
 
-export const Default: StoryObj<typeof RegistrationForm> = {};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Interactive: StoryObj<typeof RegistrationForm> = {
+export const Default: Story = {};
+
+export const Interactive: Story = {
   play: async ({ canvasElement }) => {
     const { getByText, getByRole, getByLabelText } = within(canvasElement);
     const emailInput = getByRole("textbox", { name: /Email address/i });
@@ -33,7 +36,7 @@ export const Interactive: StoryObj<typeof RegistrationForm> = {
   },
 };
 
-export const Incorrect: StoryObj<typeof RegistrationForm> = {
+export const Incorrect: Story = {
   play: async ({ canvasElement }) => {
     const { getByText, findByText } = within(canvasElement);
 

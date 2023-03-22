@@ -6,15 +6,18 @@ import dayjs from "dayjs";
 import { FilesList } from "./FilesList";
 import { withFiles } from "./FilesProvider";
 
-export default {
+const meta = {
   component: FilesList,
   decorators: [withFiles()],
-} as Meta;
+} satisfies Meta<typeof FilesList>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const FILE_NAME = "File one.pdf";
 const CREATE_DATE = dayjs().format("YYYY-MM-DD HH:mm");
 
-export const Default: StoryObj<typeof FilesList> = {
+export const Default: Story = {
   decorators: [
     withFiles([
       {

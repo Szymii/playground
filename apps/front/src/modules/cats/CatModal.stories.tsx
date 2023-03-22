@@ -3,11 +3,14 @@ import { useEffect } from "react";
 
 import { CatModal, useCatModal } from "./CatModal";
 
-export default {
+const meta = {
   component: CatModal,
-} as Meta;
+} satisfies Meta<typeof CatModal>;
 
-export const Default: StoryObj<typeof CatModal> = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   render: () => {
     useEffect(() => {
       useCatModal.setState({

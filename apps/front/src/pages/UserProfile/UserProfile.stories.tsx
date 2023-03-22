@@ -11,8 +11,6 @@ import { useEffect } from "react";
 
 import { UserProfile } from "./UserProfile";
 
-export default { component: UserProfile } as Meta;
-
 const USER_DATA = {
   emailAddress: "test@example.com",
   firstName: "Test",
@@ -20,7 +18,14 @@ const USER_DATA = {
   workplace: WorkplaceEnum.frontend,
 } as IRegistrationForm;
 
-export const Default: StoryObj<typeof UserProfile> = {
+const meta = {
+  component: UserProfile,
+} satisfies Meta<typeof UserProfile>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   render: () => {
     useEffect(() => {
       useUserDataStore.setState({

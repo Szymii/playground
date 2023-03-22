@@ -6,7 +6,7 @@ import { files } from "mocks/handlers";
 
 import { Files } from "./Files";
 
-export default {
+const meta = {
   component: Files,
   decorators: [withQueryClient()],
   parameters: {
@@ -14,11 +14,14 @@ export default {
       handlers: [files],
     },
   },
-} as Meta;
+} satisfies Meta<typeof Files>;
 
-export const Default: StoryObj<typeof Files> = {};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Interactive: StoryObj<typeof Files> = {
+export const Default: Story = {};
+
+export const Interactive: Story = {
   play: async ({ canvasElement }) => {
     const { getByText, findByText, getAllByLabelText } = within(canvasElement);
 

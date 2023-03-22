@@ -3,11 +3,14 @@ import { withRouter } from "helpers";
 
 import { AsyncPic } from "./AsyncPic";
 
-export default {
+const meta = {
   component: AsyncPic,
   decorators: [
     withRouter({ download_url: `https://picsum.photos/id/2/5000/3333` }),
   ],
-} as Meta;
+} satisfies Meta<typeof AsyncPic>;
 
-export const Default: StoryObj<typeof AsyncPic> = {};
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};

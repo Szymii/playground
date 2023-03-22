@@ -7,12 +7,15 @@ import { useEffect } from "react";
 
 import { Main } from "./Main";
 
-export default {
+const meta = {
   component: Main,
   decorators: [withRouter()],
-} as Meta;
+} satisfies Meta<typeof Main>;
 
-export const Default: StoryObj<typeof Main> = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   render: () => {
     useEffect(() => {
       useUserDataStore.setState({
@@ -28,7 +31,7 @@ export const Default: StoryObj<typeof Main> = {
   },
 };
 
-export const WithUserProfile: StoryObj<typeof Main> = {
+export const WithUserProfile: Story = {
   render: () => {
     useEffect(() => {
       useUserDataStore.setState({
