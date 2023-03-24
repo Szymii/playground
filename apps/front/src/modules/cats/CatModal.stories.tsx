@@ -1,3 +1,4 @@
+import { Button } from "@chakra-ui/react";
 import { Meta, StoryObj } from "@storybook/react";
 import { useEffect } from "react";
 
@@ -12,18 +13,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => {
+    const { onOpen } = useCatModal();
     useEffect(() => {
       useCatModal.setState({
-        isOpen: true,
-        onClose() {
-          return;
-        },
         modalData: {
           id: "dPKnpfpGVMNgo0v1",
         },
       });
     }, []);
 
-    return <CatModal />;
+    return (
+      <>
+        <Button onClick={onOpen}>Show Modal</Button>
+        <CatModal />
+      </>
+    );
   },
 };
