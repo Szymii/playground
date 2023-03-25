@@ -1,1 +1,2 @@
-export { AsyncPic, picLoader } from "./AsyncPic";
+export { AsyncPic } from "./AsyncPic";
+export { picLoader, usePicQuery } from "./usePicQuery";

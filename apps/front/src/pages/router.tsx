@@ -1,3 +1,4 @@
+import { QueryClient } from "@tanstack/react-query";
 import { PrivateRouts } from "helpers";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -8,6 +9,15 @@ import { Main } from "./Main";
 import { NotFoundPage } from "./NotFoundPage";
 import { RegistrationForm } from "./RegistrationForm";
 import { UserProfile } from "./UserProfile";
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+      staleTime: 1000 * 10,
+    },
+  },
+});
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +40,7 @@ export const router = createBrowserRouter([
       {
         path: "pic",
         element: <AsyncPic />,
-        loader: picLoader,
+        loader: picLoader(queryClient),
       },
       {
         element: <PrivateRouts />,
