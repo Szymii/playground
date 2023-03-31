@@ -11,6 +11,7 @@
     "test": "vitest --watch",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
+    "selected-story": "node runSelectedStories.js",
     "test-story": "test-storybook --watch",
     "build-storybook": "storybook build"
   },
