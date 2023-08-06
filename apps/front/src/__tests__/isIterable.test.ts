@@ -26,6 +26,7 @@ describe("check if an object is iterable", () => {
   });
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isIterable = (object: any) => {
   object = object ?? new Error("Value is null or undefined");
 
