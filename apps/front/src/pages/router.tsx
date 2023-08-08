@@ -8,6 +8,7 @@ import { Files } from "./Files";
 import { Main } from "./Main";
 import { NotFoundPage } from "./NotFoundPage";
 import { RegistrationForm } from "./RegistrationForm";
+import { Opiw, Swz, Tabs } from "./Tabs";
 import { UserProfile } from "./UserProfile";
 
 export const queryClient = new QueryClient({
@@ -36,6 +37,20 @@ export const router = createBrowserRouter([
       {
         path: "files",
         element: <Files />,
+      },
+      {
+        path: "tabs",
+        element: <Tabs />,
+        children: [
+          {
+            path: "swz",
+            element: <Swz />,
+          },
+          {
+            path: "opiw",
+            element: <Opiw />,
+          },
+        ],
       },
       {
         path: "pic",
