@@ -9,41 +9,24 @@ import {
 } from "@chakra-ui/react";
 import { mdiDownload } from "@mdi/js";
 import { IconButton } from "@szymii/ui";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
-import { useRef } from "react";
 
 interface IProps {
   email: string;
   receivedAt: string;
 }
 
-export const HTMLToImgToPDF = ({ email, receivedAt }: IProps) => {
-  const cardRef = useRef(null);
-
-  const downloadPDF = () => {
-    if (cardRef.current) {
-      html2canvas(cardRef.current).then((canvas) => {
-        const myImage = canvas.toDataURL("image/jpeg", 1);
-        const imgWidth = (canvas.width * 60) / 263;
-        const imgHeight = (canvas.height * 70) / 225;
-        const pdf = new jsPDF("p", "mm", "a4");
-
-        pdf.addImage(myImage, "png", 0, 0, imgWidth, imgHeight);
-        pdf.save(`image.pdf`);
-      });
-    }
-  };
-
+export const NativeSolution = ({ email, receivedAt }: IProps) => {
   return (
-    <Card ref={cardRef} className="not-printable">
+    <Card className="printable">
       <CardHeader pb={0}>
         <HStack w="100%" justifyContent="space-between">
-          <Text>HTMLToImgToPDF</Text>
+          <Text>Native Solution</Text>
           <IconButton
             iconPath={mdiDownload}
             ariaLabel="download"
-            onClick={downloadPDF}
+            onClick={() => {
+              window.print();
+            }}
           />
         </HStack>
       </CardHeader>
@@ -72,7 +55,7 @@ export const HTMLToImgToPDF = ({ email, receivedAt }: IProps) => {
           eligendi aut harum, sed id?
         </Text>
       </CardBody>
-      <CardFooter>This was nice</CardFooter>
+      <CardFooter>This was nice 🖐</CardFooter>
     </Card>
   );
 };
