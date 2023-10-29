@@ -24,7 +24,3 @@ export const useDeepsConsumer = () => {
 
   return context;
 };
-
-export const withDeeps = () => {
-  // TODO
-};

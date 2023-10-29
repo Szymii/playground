@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Image, Input } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Image, Input } from "@chakra-ui/react";
 import { debounce } from "lodash";
 import { useProductsQuery } from "modules/products";
 import { useState } from "react";
@@ -12,6 +12,7 @@ export const Products = () => {
 
   return (
     <Container mt={5}>
+      <Heading data-testid="heading">Cats as a product</Heading>
       <Input onChange={({ target }) => setCatEgory(target.value)} />
       <Flex gap="1em" mt={8}>
         {cats?.map(({ id }) => (
