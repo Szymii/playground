@@ -26,7 +26,7 @@ root.render(
       <ChakraProvider theme={theme}>
         <RouterProvider router={router} />
       </ChakraProvider>
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      <ReactQueryDevtools initialIsOpen={false} buttonPosition="bottom-right" />
     </QueryClientProvider>
   </React.StrictMode>,
 );

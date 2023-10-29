@@ -16,7 +16,7 @@ export const Main = () => {
         <Link to={"/cats"}>Cats</Link>
         <Link to={"/form"}>Form</Link>
         <Link to={"/tabs"}>Tabs</Link>
-        <Link to={"/loaders"}>Load</Link>
+        <Link to={"/products"}>Products</Link>
         <Link to={"/pic"}>Random Pic</Link>
         {isNotEmptyObject(userData) && <Link to={"/profile"}>Profile</Link>}
       </Nav>

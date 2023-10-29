@@ -41,7 +41,10 @@ export const withRouter = <T,>(loaderData?: T) => {
     return (
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+        <ReactQueryDevtools
+          initialIsOpen={false}
+          buttonPosition="bottom-right"
+        />
       </QueryClientProvider>
     );
   };

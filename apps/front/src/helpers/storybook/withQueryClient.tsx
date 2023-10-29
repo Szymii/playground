@@ -17,7 +17,7 @@ export const withQueryClient = () => {
   return (Story) => (
     <QueryClientProvider client={queryClient}>
       <Story />
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      <ReactQueryDevtools initialIsOpen={false} buttonPosition="bottom-right" />
     </QueryClientProvider>
   );
 };
