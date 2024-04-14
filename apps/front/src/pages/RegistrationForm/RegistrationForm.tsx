@@ -12,6 +12,7 @@ import {
   Radio,
   RadioGroup,
   Select,
+  Switch,
   VStack,
 } from "@chakra-ui/react";
 import { ErrorBoundary } from "@szymii/ui";
@@ -23,7 +24,11 @@ const RegistrationFormThrowable = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IRegistrationForm>();
+  } = useForm<IRegistrationForm>({
+    defaultValues: {
+      emailAlerts: null,
+    },
+  });
   const setUserData = useUserDataStore((state) => state.setUserData);
 
   const onSubmit = (data: IRegistrationForm) => {
@@ -90,6 +95,18 @@ const RegistrationFormThrowable = () => {
             <Checkbox {...register("policy", { required: true })} isRequired>
               Accepting privacy policy and terms of use
             </Checkbox>
+          </Box>
+          <Box w="100%">
+            <FormControl display="flex" alignItems="center">
+              <FormLabel htmlFor="email-alerts" mb="0">
+                Enable email alerts?
+              </FormLabel>
+              <Switch
+                {...register("emailAlerts")}
+                id="email-alerts"
+                defaultChecked
+              />
+            </FormControl>
           </Box>
           <Box w="100%">
             <Button mt={4} colorScheme="teal" type="submit">

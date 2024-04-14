@@ -16,4 +16,5 @@ export interface IRegistrationForm {
   gender: GenderEnum;
   workplace: WorkplaceEnum;
   policy: boolean;
+  emailAlerts: boolean | null;
 }
