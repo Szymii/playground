@@ -1,4 +1,4 @@
-import { expect, it } from "vitest";
+import { beforeEach, expect, it } from "vitest";
 
 import { getUser } from "./getUser";
 
