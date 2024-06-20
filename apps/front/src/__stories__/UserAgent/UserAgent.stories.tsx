@@ -1,5 +1,5 @@
-import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
+import { expect } from "@storybook/test";
 import { isTestRunner } from "helpers";
 
 import { UserAgent } from ".";

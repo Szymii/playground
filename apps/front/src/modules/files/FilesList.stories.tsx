@@ -1,6 +1,6 @@
-import { expect } from "@storybook/jest";
 import { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/test";
+import { userEvent, within } from "@storybook/test";
 import dayjs from "dayjs";
 
 import { FilesList } from "./FilesList";
