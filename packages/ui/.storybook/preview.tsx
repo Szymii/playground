@@ -2,6 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Preview } from "@storybook/react";
 import React from "react";
 
+import { ColorModeProvider } from "../src/components/ui/color-mode";
 import { theme } from "../src/theme";
 
 const preview: Preview = {
@@ -16,8 +17,13 @@ const preview: Preview = {
     snapshot: { disable: false },
   },
   decorators: [
-    (story) =>
-      React.createElement(ChakraProvider, { children: story(), theme }),
+    (Story) => (
+      <ChakraProvider value={theme}>
+        <ColorModeProvider>
+          <Story />
+        </ColorModeProvider>
+      </ChakraProvider>
+    ),
   ],
 };
 

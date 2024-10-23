@@ -1,4 +1,4 @@
-import { Flex, FlexProps, useBoolean } from "@chakra-ui/react";
+import { Flex, FlexProps, useDisclosure } from "@chakra-ui/react";
 import { mdiHamburger } from "@mdi/js";
 import { ReactNode } from "react";
 
@@ -6,7 +6,7 @@ import { IconButton, ToggleLightButton } from "../../atoms";
 import { MobileMenu } from "./MobileMenu";
 
 export const Nav = ({ children }: { children: ReactNode }) => {
-  const [isOpen, setIsOpen] = useBoolean(false);
+  const { onOpen, open, onClose } = useDisclosure();
 
   return (
     <>
@@ -15,13 +15,13 @@ export const Nav = ({ children }: { children: ReactNode }) => {
         <ToggleLightButton />
       </Wrapper>
       <Wrapper display={{ base: "flex", md: "none" }}>
-        <MobileMenu close={setIsOpen.off} isOpen={isOpen}>
+        <MobileMenu close={onClose} isOpen={open}>
           {children}
         </MobileMenu>
         <IconButton
           ariaLabel="toggle-menu"
           iconPath={mdiHamburger}
-          onClick={setIsOpen.on}
+          onClick={onOpen}
         />
       </Wrapper>
     </>

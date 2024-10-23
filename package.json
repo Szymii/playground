@@ -1,6 +1,7 @@
 {
   "name": "@szymii/monorepo",
   "packageManager": "pnpm@7.25.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "turbo run dev",

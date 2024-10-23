@@ -7,7 +7,7 @@ interface IProps {
 
 export const SelectableList = ({ children }: IProps) => {
   return (
-    <VStack pl={6} mt={1} spacing={1} align="stretch">
+    <VStack pl={6} mt={1} gap={1} align="stretch">
       {children}
     </VStack>
   );

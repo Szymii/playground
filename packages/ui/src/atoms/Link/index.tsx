@@ -9,8 +9,8 @@ interface IProps {
 
 export const Link = ({ to, children }: IProps) => {
   return (
-    <CLink as={RouterLink} to={to} fontSize="1.4rem" fontWeight="bold">
-      {children}
+    <CLink asChild fontSize="1.4rem" fontWeight="bold">
+      <RouterLink to={to}>{children}</RouterLink>
     </CLink>
   );
 };

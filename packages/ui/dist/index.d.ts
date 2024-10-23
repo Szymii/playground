@@ -1,4 +1,5 @@
-import { ButtonProps, CheckboxProps } from '@chakra-ui/react';
+import * as _chakra_ui_react from '@chakra-ui/react';
+import { ButtonProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 declare const ToggleLightButton: () => JSX.Element;
@@ -23,11 +24,11 @@ interface IProps$3 {
 }
 declare const ErrorBoundary: ({ children, message }: IProps$3) => JSX.Element;
 
-interface IProps$2<Item> extends CheckboxProps {
+interface IProps$2<Item> {
     children: ReactNode;
     item: Item;
 }
-declare const SelectableItem: <Item>({ children, item, ...props }: IProps$2<Item>) => JSX.Element;
+declare const SelectableItem: <Item>({ children, item }: IProps$2<Item>) => null;
 
 interface IProps$1 {
     children: ReactNode;
@@ -49,6 +50,6 @@ declare const Nav: ({ children }: {
     children: ReactNode;
 }) => JSX.Element;
 
-declare const theme: Record<string, any>;
+declare const theme: _chakra_ui_react.SystemContext;
 
 export { ErrorBoundary, IconButton, Link, Nav, SelectableItem, SelectableList, SelectableProvider, ToggleLightButton, theme, useSelectableConsumer };

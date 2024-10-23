@@ -16,11 +16,8 @@ export const IconButton = ({
   ...rest
 }: IProps) => {
   return (
-    <Button
-      aria-label={ariaLabel}
-      title={title}
-      icon={<Icon size={iconSize} path={iconPath} />}
-      {...rest}
-    />
+    <Button aria-label={ariaLabel} title={title} {...rest}>
+      <Icon size={iconSize} path={iconPath} />
+    </Button>
   );
 };
