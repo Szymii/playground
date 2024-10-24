@@ -28,7 +28,7 @@ interface IProps$2<Item> {
     children: ReactNode;
     item: Item;
 }
-declare const SelectableItem: <Item>({ children, item }: IProps$2<Item>) => null;
+declare const SelectableItem: <Item>({ children, item }: IProps$2<Item>) => JSX.Element;
 
 interface IProps$1 {
     children: ReactNode;

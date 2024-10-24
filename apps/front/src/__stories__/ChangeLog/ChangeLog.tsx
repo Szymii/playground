@@ -1,13 +1,11 @@
 import {
+  Box,
   Button,
-  Collapse,
+  CollapsibleRoot,
   Container,
-  Divider,
   Heading,
-  List,
-  ListIcon,
   ListItem,
-  useBoolean,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { mdiCheck, mdiCheckBold } from "@mdi/js";
 import Icon from "@mdi/react";
@@ -21,7 +19,7 @@ export const ChangeLog = () => {
     b.version.localeCompare(a.version, undefined, { numeric: true }),
   );
 
-  const [show, setShow] = useBoolean();
+  const { onToggle, open } = useDisclosure();
 
   const isLatestVersion = (version: string) => {
     const latest = "2.3.0".match("\\d{1,}\\.\\d{1,}");
@@ -33,8 +31,6 @@ export const ChangeLog = () => {
 
     return false;
   };
-
-  const handleToggle = () => setShow.toggle();
 
   return (
     <Container p="2em">
@@ -49,24 +45,22 @@ export const ChangeLog = () => {
                 <Heading as="h2" fontSize="1.8rem">
                   {version}
                 </Heading>
-                <Divider my="5px" />
                 <GoalsList changes={changes} />
               </>
             ) : (
-              <Collapse in={show}>
+              <CollapsibleRoot open={open}>
                 <Heading as="h2" fontSize="1.8rem">
                   {version}
                 </Heading>
-                <Divider my="5px" />
                 <GoalsList changes={changes} />
-              </Collapse>
+              </CollapsibleRoot>
             )}
           </Fragment>
         );
       })}
       {logs.length > 1 && (
-        <Button onClick={handleToggle} width="100%">
-          {!show ? "Show" : "Hide"} later versions
+        <Button onClick={onToggle} width="100%">
+          {!open ? "Show" : "Hide"} later versions
         </Button>
       )}
     </Container>
@@ -75,35 +69,31 @@ export const ChangeLog = () => {
 
 const GoalsList = ({ changes }: { changes: goal[] }) => {
   return (
-    <List spacing={3} mb="2rem">
+    <Box as="ul" gap={3} mb="2rem">
       {changes.map(({ goal, subGoal }) => {
         return (
           <ListItem key={goal} fontWeight="600">
-            <ListIcon>
-              <Icon size="1" path={mdiCheckBold} color="green" />
-            </ListIcon>
+            <Icon size="1" path={mdiCheckBold} color="green" />
             {goal}
             {subGoal.length > 0 && <SubGoalsList subGoal={subGoal} />}
           </ListItem>
         );
       })}
-    </List>
+    </Box>
   );
 };
 
 const SubGoalsList = ({ subGoal }: { subGoal: string[] }) => {
   return (
-    <List spacing={3} paddingLeft="1.8rem" fontWeight="400">
+    <Box as="ul" gap={3} paddingLeft="1.8rem" fontWeight="400">
       {subGoal.map((subGoal) => {
         return (
           <ListItem key={subGoal}>
-            <ListIcon>
-              <Icon size="1" path={mdiCheck} color="green" />
-            </ListIcon>
+            <Icon size="1" path={mdiCheck} color="green" />
             {subGoal}
           </ListItem>
         );
       })}
-    </List>
+    </Box>
   );
 };

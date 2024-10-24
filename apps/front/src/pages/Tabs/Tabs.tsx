@@ -12,7 +12,7 @@ export const Tabs = () => {
 
   return (
     <Container p="2em">
-      <HStack spacing={6} justify="center" mb={4}>
+      <HStack gap={6} justify="center" mb={4}>
         <Link to={"/tabs/swz"}>SWZ</Link>
         <Link to={"/tabs/opiw"}>OPiW</Link>
       </HStack>

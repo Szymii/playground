@@ -29,9 +29,11 @@
     "html2pdf.js": "^0.10.1",
     "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
+    "next-themes": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.1",
+    "react-icons": "^4.7.1",
     "react-router-dom": "^6.17.0",
     "react-select": "^5.7.4",
     "uuid": "^9.0.0",
@@ -40,6 +42,7 @@
     "zustand": "^4.1.1"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^3.0.0",
     "@chromatic-com/storybook": "1",
     "@storybook/addon-a11y": "^8.1.10",
     "@storybook/addon-actions": "^8.1.10",
@@ -64,9 +67,9 @@
     "msw-storybook-addon": "^2.0.2",
     "storybook": "^8.1.10",
     "storybook-dark-mode": "^4.0.2",
-    "typescript": "^5.5.4",
+    "typescript": "^5.6.3",
     "vite": "^4.0.4",
-    "vite-plugin-checker": "^0.5.1",
+    "vite-plugin-checker": "^0.8.0",
     "vitest": "^0.25.3",
     "vitest-fetch-mock": "^0.2.1"
   },

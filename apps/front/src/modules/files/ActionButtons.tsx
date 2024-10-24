@@ -1,9 +1,8 @@
 import {
-  Menu,
-  MenuButton,
-  IconButton as MenuIconButton,
+  IconButton as CIconButton,
+  MenuContent,
   MenuItem,
-  MenuList,
+  MenuRoot,
 } from "@chakra-ui/react";
 import {
   mdiDotsVertical,
@@ -88,29 +87,28 @@ export const ActionButtons = ({ file }: IProps) => {
 
   if (arrayOfButtons.length > 1) {
     return (
-      <Menu>
-        <MenuButton
-          as={MenuIconButton}
-          aria-label="Options"
-          icon={<Icon size={1} path={mdiDotsVertical} />}
-        />
-        <MenuList>
+      <MenuRoot>
+        <CIconButton aria-label="Options">
+          <Icon size={1} path={mdiDotsVertical} />
+        </CIconButton>
+        <MenuContent>
           {arrayOfButtons.map(({ props }, index) => {
             // eslint-disable-next-line react/prop-types
             const { iconPath, ariaLabel, onClick, title } = props as IMenuItem;
             return (
               <MenuItem
                 key={index}
-                icon={<Icon path={iconPath} size={1} />}
                 aria-label={ariaLabel}
                 onClick={onClick}
+                value={title}
               >
+                <Icon path={iconPath} size={1} />
                 {title}
               </MenuItem>
             );
           })}
-        </MenuList>
-      </Menu>
+        </MenuContent>
+      </MenuRoot>
     );
   }
 

@@ -1,17 +1,17 @@
-import { ListItem as CListItem, List } from "@chakra-ui/react";
+import { Box, ListItem as CListItem } from "@chakra-ui/react";
 import Icon from "@mdi/react";
 import { getIconByExtension } from "helpers";
 import { ReactNode } from "react";
 
 export const ChildrenAsFunction = () => {
   return (
-    <List spacing={3}>
+    <Box as="ul" gap={3}>
       {
         <ListItem extension={"pdf"}>
           {(path) => <Icon size={4} path={path} color="green" />}
         </ListItem>
       }
-    </List>
+    </Box>
   );
 };
 

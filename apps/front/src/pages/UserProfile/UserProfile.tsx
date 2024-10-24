@@ -1,14 +1,6 @@
-import {
-  Container,
-  FormControl,
-  FormLabel,
-  HStack,
-  Heading,
-  Input,
-  Radio,
-  RadioGroup,
-  VStack,
-} from "@chakra-ui/react";
+import { Container, HStack, Heading, Input, VStack } from "@chakra-ui/react";
+import { Field } from "components/ui/field";
+import { Radio, RadioGroup } from "components/ui/radio";
 import { useUserDataStore } from "modules/users";
 
 export const UserProfile = () => {
@@ -19,19 +11,16 @@ export const UserProfile = () => {
       <Heading textAlign="center" mb="1em" data-testid={"user-greeting"}>
         Hi {userData.firstName}
       </Heading>
-      <VStack spacing="1em">
-        <FormControl>
-          <FormLabel>Email address</FormLabel>
+      <VStack gap="1em">
+        <Field label="Email address">
           <Input type="text" value={userData.emailAddress} disabled />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Workplace</FormLabel>
+        </Field>
+        <Field label="Workplace">
           <Input type="text" value={userData.workplace} disabled />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Gender</FormLabel>
+        </Field>
+        <Field label="Gender">
           <RadioGroup defaultValue="Man" value={userData.gender}>
-            <HStack spacing="24px">
+            <HStack gap="24px">
               <Radio value="female" disabled>
                 Woman
               </Radio>
@@ -40,7 +29,7 @@ export const UserProfile = () => {
               </Radio>
             </HStack>
           </RadioGroup>
-        </FormControl>
+        </Field>
       </VStack>
     </Container>
   );

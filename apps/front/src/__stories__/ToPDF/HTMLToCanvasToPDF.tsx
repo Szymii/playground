@@ -35,7 +35,7 @@ export const HTMLToCanvasToPDF = ({ email, receivedAt }: IProps) => {
   };
 
   return (
-    <Card ref={cardRef} className="not-printable">
+    <Card.Root ref={cardRef} className="not-printable">
       <CardHeader pb={0}>
         <HStack w="100%" justifyContent="space-between">
           <Text>HTMLToCanvasToPDF</Text>
@@ -72,6 +72,6 @@ export const HTMLToCanvasToPDF = ({ email, receivedAt }: IProps) => {
         </Text>
       </CardBody>
       <CardFooter>This was nice 🖐</CardFooter>
-    </Card>
+    </Card.Root>
   );
 };

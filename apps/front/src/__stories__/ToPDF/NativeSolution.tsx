@@ -1,8 +1,8 @@
 import {
-  Card,
   CardBody,
   CardFooter,
   CardHeader,
+  CardRoot,
   HStack,
   Text,
   VStack,
@@ -17,7 +17,7 @@ interface IProps {
 
 export const NativeSolution = ({ email, receivedAt }: IProps) => {
   return (
-    <Card className="printable">
+    <CardRoot className="printable">
       <CardHeader pb={0}>
         <HStack w="100%" justifyContent="space-between">
           <Text>Native Solution</Text>
@@ -56,6 +56,6 @@ export const NativeSolution = ({ email, receivedAt }: IProps) => {
         </Text>
       </CardBody>
       <CardFooter>This was nice 🖐</CardFooter>
-    </Card>
+    </CardRoot>
   );
 };

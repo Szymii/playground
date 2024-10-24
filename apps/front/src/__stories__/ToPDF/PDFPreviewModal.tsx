@@ -1,14 +1,4 @@
-import {
-  Button,
-  ButtonGroup,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-} from "@chakra-ui/react";
+import { Button, HStack } from "@chakra-ui/react";
 import {
   Document,
   PDFViewer,
@@ -18,6 +8,15 @@ import {
   View,
   pdf,
 } from "@react-pdf/renderer";
+import {
+  DialogBackdrop,
+  DialogBody,
+  DialogCloseTrigger,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogRoot,
+} from "components/ui/dialog";
 import { createModalStore } from "helpers";
 import { ComponentProps } from "react";
 
@@ -42,18 +41,18 @@ export const PDFPreviewModal = (props: IProps) => {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="2xl">
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Preview</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody pb="5">
+    <DialogRoot open={isOpen}>
+      <DialogBackdrop />
+      <DialogContent>
+        <DialogHeader>Preview</DialogHeader>
+        <DialogCloseTrigger />
+        <DialogBody pb="5">
           <PDFViewer width={600} height={400} showToolbar={false}>
             <PDFDocument {...props} />
           </PDFViewer>
-        </ModalBody>
-        <ModalFooter>
-          <ButtonGroup>
+        </DialogBody>
+        <DialogFooter>
+          <HStack>
             <Button
               onClick={async () => {
                 await downloadPDF();
@@ -62,10 +61,10 @@ export const PDFPreviewModal = (props: IProps) => {
               Download
             </Button>
             <Button onClick={onClose}>Cancel</Button>
-          </ButtonGroup>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+          </HStack>
+        </DialogFooter>
+      </DialogContent>
+    </DialogRoot>
   );
 };
 

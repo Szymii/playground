@@ -9,15 +9,15 @@ export const FilesList = () => {
   const files = useFilesConsumer();
 
   return (
-    <VStack spacing="15" w="100%">
+    <VStack gap="15" w="100%">
       {files?.map((file) => (
-        <HStack w="100%" spacing="15px" key={file.id}>
+        <HStack w="100%" gap="15px" key={file.id}>
           <Box>
             <Icon path={getIconByExtension(file.fileExtension)} size={1.5} />
           </Box>
           <Box w="100%">
             <VStack alignItems="flex-start">
-              <Text noOfLines={1} maxW="200px">
+              <Text lineClamp={1} maxW="200px">
                 {file.fileName}
               </Text>
               <Text fontSize=".8rem">Created at: {file.createdAt}</Text>

@@ -8,7 +8,7 @@ export const Files = () => {
       <Heading textAlign="center" mb="1em">
         Files
       </Heading>
-      <VStack spacing="1em">
+      <VStack gap="1em">
         <ErrorBoundary message="No files this time">
           <FilesProvider>
             <FilesList />

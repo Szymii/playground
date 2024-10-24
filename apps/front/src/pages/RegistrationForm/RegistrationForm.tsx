@@ -1,21 +1,24 @@
 import {
   Box,
   Button,
-  Checkbox,
   Container,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
   HStack,
   Heading,
   Input,
-  Radio,
-  RadioGroup,
-  Select,
-  Switch,
   VStack,
+  createListCollection,
 } from "@chakra-ui/react";
 import { ErrorBoundary } from "@szymii/ui";
+import { Checkbox } from "components/ui/checkbox";
+import { Field } from "components/ui/field";
+import { Radio, RadioGroup } from "components/ui/radio";
+import {
+  SelectContent,
+  SelectItem,
+  SelectRoot,
+  SelectTrigger,
+} from "components/ui/select";
+import { Switch } from "components/ui/switch";
 import { IRegistrationForm, useUserDataStore } from "modules/users";
 import { useForm } from "react-hook-form";
 
@@ -35,29 +38,39 @@ const RegistrationFormThrowable = () => {
     setUserData(data);
   };
 
+  const frameworks = createListCollection({
+    items: [
+      { label: "frontend", value: "frontend" },
+      { label: "backend", value: "backend" },
+      { label: "fullstack", value: "fullstack" },
+    ],
+  });
+
   return (
     <>
       <Heading textAlign="center" mb="1em">
         Registration Form
       </Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <VStack spacing="24px">
-          <FormControl isInvalid={!!errors?.emailAddress}>
-            <FormLabel>Email address</FormLabel>
+        <VStack gap="24px">
+          <Field
+            invalid={!!errors?.emailAddress}
+            label="Email address"
+            errorText="Email is required."
+          >
             <Input
               type="email"
               {...register("emailAddress", { required: true })}
             />
-            {errors.emailAddress && (
-              <FormErrorMessage>Email is required.</FormErrorMessage>
-            )}
-          </FormControl>
-          <FormControl>
-            <FormLabel>First Name</FormLabel>
+          </Field>
+          <Field label="First Name">
             <Input type="text" {...register("firstName")} />
-          </FormControl>
-          <FormControl isInvalid={!!errors?.password}>
-            <FormLabel>Password</FormLabel>
+          </Field>
+          <Field
+            invalid={!!errors?.password}
+            label="Password"
+            errorText="Invalid password."
+          >
             <Input
               type="password"
               {...register("password", {
@@ -65,13 +78,10 @@ const RegistrationFormThrowable = () => {
                 pattern: /^[a-zA-z0-9]{3,}$/,
               })}
             />
-            {errors.password && (
-              <FormErrorMessage>Invalid password.</FormErrorMessage>
-            )}
-          </FormControl>
-          <FormControl as="fieldset">
+          </Field>
+          <Field as="fieldset">
             <RadioGroup defaultValue="Man">
-              <HStack spacing="24px">
+              <HStack gap="24px">
                 <Radio value="female" {...register("gender")}>
                   Woman
                 </Radio>
@@ -80,33 +90,36 @@ const RegistrationFormThrowable = () => {
                 </Radio>
               </HStack>
             </RadioGroup>
-          </FormControl>
-          <Select
-            placeholder="Workplace"
+          </Field>
+          <SelectRoot
+            collection={frameworks}
             {...register("workplace")}
             name="workplace"
-            aria-label="workplace-select"
           >
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
-            <option value="fullstack">Fullstack</option>
-          </Select>
+            <SelectTrigger aria-label="workplace-select" />
+            <SelectContent>
+              <SelectItem item="frontend">Frontend</SelectItem>
+              <SelectItem item="backend">Backend</SelectItem>
+              <SelectItem item="fullstack">Fullstack</SelectItem>
+            </SelectContent>
+          </SelectRoot>
           <Box w="100%">
-            <Checkbox {...register("policy", { required: true })} isRequired>
+            <Checkbox {...register("policy", { required: true })} required>
               Accepting privacy policy and terms of use
             </Checkbox>
           </Box>
           <Box w="100%">
-            <FormControl display="flex" alignItems="center">
-              <FormLabel htmlFor="email-alerts" mb="0">
-                Enable email alerts?
-              </FormLabel>
+            <Field
+              display="flex"
+              alignItems="center"
+              label="Enable email alerts?"
+            >
               <Switch
                 {...register("emailAlerts")}
                 id="email-alerts"
                 defaultChecked
               />
-            </FormControl>
+            </Field>
           </Box>
           <Box w="100%">
             <Button mt={4} colorScheme="teal" type="submit">

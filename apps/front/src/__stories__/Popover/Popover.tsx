@@ -1,12 +1,11 @@
 import {
   Button,
-  Popover as CPopover,
   PopoverArrow,
   PopoverBody,
-  PopoverCloseButton,
   PopoverContent,
   PopoverFooter,
   PopoverHeader,
+  PopoverRoot,
   PopoverTrigger,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
@@ -17,14 +16,13 @@ interface IProps {
 
 export const Popover = ({ children }: IProps) => {
   return (
-    <CPopover placement="bottom-start" isOpen={true}>
+    <PopoverRoot positioning={{ placement: "bottom-start" }} open={true}>
       <PopoverTrigger>{children}</PopoverTrigger>
       <PopoverContent color="white" bg="blue.800" borderColor="blue.800">
         <PopoverHeader pt={4} fontWeight="bold" border="0">
           Manage Your Channels
         </PopoverHeader>
         <PopoverArrow />
-        <PopoverCloseButton />
         <PopoverBody>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore.
@@ -39,6 +37,6 @@ export const Popover = ({ children }: IProps) => {
           <Button variant="outline">Show</Button>
         </PopoverFooter>
       </PopoverContent>
-    </CPopover>
+    </PopoverRoot>
   );
 };

@@ -8,7 +8,7 @@ export const Cats = () => {
       <Heading textAlign="center" mb="1em">
         Cats
       </Heading>
-      <VStack spacing="1em">
+      <VStack gap="1em">
         <ErrorBoundary message="No cats this time">
           <CatsList heading="Cute" category="cute" />
           <CatsList heading="Box" category="box" />

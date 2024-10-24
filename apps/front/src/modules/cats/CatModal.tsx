@@ -1,13 +1,12 @@
+import { Box, Image } from "@chakra-ui/react";
 import {
-  Box,
-  Modal as ChakraModal,
-  Image,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-} from "@chakra-ui/react";
+  DialogBackdrop,
+  DialogBody,
+  DialogCloseTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogRoot,
+} from "components/ui/dialog";
 import { createModalStore } from "helpers";
 
 export const useCatModal = createModalStore<{ id: string }>();
@@ -16,12 +15,12 @@ export const CatModal = () => {
   const { isOpen, onClose, modalData } = useCatModal();
 
   return (
-    <ChakraModal isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Modal Title</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody pb="5">
+    <DialogRoot open={isOpen}>
+      <DialogBackdrop />
+      <DialogContent>
+        <DialogHeader>Modal Title</DialogHeader>
+        <DialogCloseTrigger onClick={onClose} />
+        <DialogBody pb="5">
           <Box>
             <Image
               src={`https://cataas.com/cat/${modalData.id}`}
@@ -31,8 +30,8 @@ export const CatModal = () => {
               borderRadius="15px"
             />
           </Box>
-        </ModalBody>
-      </ModalContent>
-    </ChakraModal>
+        </DialogBody>
+      </DialogContent>
+    </DialogRoot>
   );
 };

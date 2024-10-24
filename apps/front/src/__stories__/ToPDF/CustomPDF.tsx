@@ -23,7 +23,7 @@ export const CustomPDF = ({ email, receivedAt }: IProps) => {
   return (
     <>
       <PDFPreviewModal email={email} receivedAt={receivedAt} />
-      <Card className="not-printable">
+      <Card.Root className="not-printable">
         <CardHeader pb={0}>
           <HStack w="100%" justifyContent="space-between">
             <Text>Custom PDF</Text>
@@ -62,7 +62,7 @@ export const CustomPDF = ({ email, receivedAt }: IProps) => {
           </Text>
         </CardBody>
         <CardFooter>This was nice 🖐</CardFooter>
-      </Card>
+      </Card.Root>
     </>
   );
 };
